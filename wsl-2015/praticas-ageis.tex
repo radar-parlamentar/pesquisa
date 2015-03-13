@@ -1,0 +1,197 @@
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+
+\usepackage[brazil]{babel}
+
+\usepackage{graphicx,url}
+
+%\usepackage[brazil]{babel}   
+\usepackage[latin1]{inputenc}  
+
+\usepackage{xspace}
+
+\newcommand{\rasura}{@@@\xspace}     
+\newcommand{\radarp}{\rasura}     
+\newcommand{\radar}{\rasura}
+     
+     
+\sloppy
+
+\title{\radarp\footnote{O nome do projeto utilizado neste estudo de caso, assim como qualquer contexto que possibilite sua fácil identificação, serão ocultos com a rasura ``\rasura'' devido ao sistema de \emph{blind review} do WSL 2015.} : práticas ágeis em um projeto de software livre}
+
+
+
+\author{Autores}
+
+\address{Instituições}
+
+\begin{document} 
+
+\maketitle
+
+\begin{abstract}
+  English abstract
+\end{abstract}
+     
+\begin{resumo} 
+Embora surgidas em contextos diferentes, e com motivações diferentes, há vários aspectos em comum entre as práticas ágeis e as práticas tradicionalmente adotadas em projetos de software livre. Neste artigo apresentaremos o projeto \radarp como um estudo de caso sobre a aplicabilidade de práticas ágeis em um projeto de software livre não-comercial. 
+Iremos adotar como referência as práticas da Programação Extrema (XP) e iremos explorar quais são as práticas da XP utilizadas e as não utilizadas no projeto, assim como as motivações para a utilização ou não de cada prática. Com isso, nossa contribuição é a apresentação de evidências empíricas de um caso concreto sobre a relação entre práticas ágeis e projetos de software livre. 
+\end{resumo}
+
+
+\section{Introdução}
+
+Embora surgidas em contextos diferentes, e com motivações diferentes, há vários aspectos em comum entre as práticas ágeis e as práticas tradicionalmente adotadas em projetos de software livre. Essa relação já tem sido estudada por pesquisadores, principalmente no contexto de projetos livres sem o patrocínio de alguma organização.
+
+Neste artigo apresentaremos um projeto de software livre, o \radarp, como estudo de caso sobre a aplicabilidade das práticas ágeis em um projeto de software livre não-comercial. Iremos adotar como referência as práticas da Programação Extrema e iremos explorar:
+
+1) Quais as práticas ágeis adotadas no Radar e os benefícios que elas trazem no contexto de um projeto de software livre.
+
+2) Quais as práticas ágeis não adotadas no Radar e o porquê isso acontece.
+
+Com isso, esperamos apresentar evidências empíricas sobre a relação entre práticas ágeis e projetos de software livre. Como em qualquer estudo de caso, há o viés de que estamos observando apenas um caso particular, mas em compensação podemos fazer uma análise qualitativa com mais profundidade para entender, nesse contexto, porque tais práticas específicas são utilizadas ou não.
+
+Método: autores deste artigo são desenvolvedores do projeto, então podem conseguem enxergar bem as motivação e desmotivações envolvidas na adoção das práticas.
+
+Contexto: recorte do tipo de projeto software livre
+
+Além de relatar, este trabalho pode ajudar a sugerir práticas ágeis ao \radar e outros projetos de software livre que ainda não estejam sendo utilziadas....
+
+Aplicações das lições não só pra SL, mas para projetos distribuídos em geral, já q maior dif entre ágil e livre está na distribuição.
+
+\section{Sobre o projeto \radarp}
+
+\section{Métodos ágeis e a Programação Extrema}
+
+Intro sobre ágil...
+
+Intro sobre XP... valores... \emph{Comunicação}, \emph{Coragem}, \emph{Feedback}, \emph{Respeito}, e \emph{Simplicidade}.
+
+Apresentaremos agora brevemente as práticas da XP descritas na segunda edição do livro \emph{Extreme Programming Explained}~\cite{Beck2000Xp}:
+
+\begin{description}
+
+\item [Sentar-se junto:] a equipe deve trabalhar em um mesmo espaço de trabalho para promover a comunicação. Espaços abertos são preferíveis aos cubículos.
+
+\item [Equipe integral:] a equipe deve incluir pessoas de forma a conter todas as habilidades necessárias para o sucesso do projeto. Exemplos de perfis possivelmente necessários: desenvolvedores, analistas de negócios, administradores de sistemas, testadores, etc. Todos devem estar comprometidos com o sucesso do projeto.
+
+\item [Ambiente informativo:] algum interessado deve ser capaz de entrar no ambiente de trabalho e obter em poucos segundos uma ideia do andamento do projeto. Com mais uma olhada, ele deve ser capaz de captar possíveis problemas que estejam acontecendo.
+
+\item [Trabalho energizado:] trabalhe apenas o tempo em que conseguir manter um ritmo produtivo. O desenvolvimento de software é um trabalho criativo, por isso trabalhar mais horas não é o melhor caminho para a entrega de um produto melhor.
+
+\item [Programação em par:] dois desenvolvedores trabalham juntos na mesma estação de trabalho. Com essa prática, o código (junto de seu \emph{design} e testes) já nascem de forma muito mais criteriosa e, portanto, com maior qualidade.
+
+\item [Histórias:] o cliente deve escrever pequenas histórias que ilustrem novas funcionalidades ou capacidades do sistema. O esforço de implementação dessas histórias é estimado pela equipe, e assim elas podem ser priorizadas pelo cliente.
+
+\item [Ciclo semanal:] a equipe e o cliente devem realizar um planejamento semanal do que a equipe irá entregar na próxima semana. Isso promove o desenvolvimento incremental e acelera o ciclo de \emph{feedback}.
+
+\item [Ciclo trimestral:] além do planejamento semanal, um planejamento de maior prazo é realizado trimestralmente, no qual é possível haver mais reflexão sobre o projeto, além de discussões sobre os gargalos enfrentados.
+
+\item [Folga:] deixe sempre uma folga no planejamento. Se sobrar tempo, é possível entregar algo a mais ou utilizar o tempo extra para aprendizado. Mas se comprometer com o que não pode ser entregue pode gerar muitos desgastes nos relacionamentos com o cliente e com a organização.
+
+\item [\emph{Build} de dez minutos:] o sistema deve ser construído (compilado, testado e empacotado) em até 10 minutos. Um tempo maior é um incentivo para que o desenvolvedor não execute o \emph{build} com frequência, o que reduz o \emph{feedback} e deteriora a qualidade do produto.
+
+\item [Integração contínua:] suas mudanças no código devem ser continuamente integradas com o trabalho de outros colegas. Quanto mais tempo se espera para integrar diferentes fluxos de trabalho, maior será o esforço e a dificuldade em se completar com sucesso a integração.
+
+\item [Desenvolvimento Orientado a Testes:] escreva primeiro um teste falhando para especificar o comportamento do próximo trecho de código a ser escrito. Assim o desenvolvedor terá um foco maior em escrever código que realmente importa. Além disso, a escrita de testes automatizados fornece constante \emph{feedback} sobre a qualidade do \emph{design} do código.
+
+\item [Design incremental:] investimento em um bom \emph{design} deve ser realizado constantemente ao longo do desenvolvimento do sistema. Um bom \emph{design} promoverá a capacidade de introduzir mudanças no sistema posteriormente, o que é o grande objetivo da XP (\emph{abrace a mudança}). A melhoria contínua do \emph{design} é preferível a uma grande fase inicial de \emph{design}.
+
+%\item [Jogo de Planejamento]
+%\item [Fases pequenas]
+%\item [Metáfora]
+%\item [Design Simples]
+%\item [Testes de Aceitação]
+%\item [Semana de 40 horas]
+%\item [Propriedade Coletiva]
+%\item [Padronização do Código]
+%\item [Refatoração]
+
+\end{description}
+
+\section{Trabalhos relacionados: práticas ágeis em projetos software livre}
+
+Intro do livro XP, por Erich Gamma, já fala as práticas ágeis que o projeto Eclipse utiliza! Várias são listadas, mas ele fala que nem todas são usadas.
+
+Citando galera~\cite{Ahalt2014Water, Turnu2004TddSimulating, Tsirakidis2009SuccessFailures}
+
+
+\section{Práticas da XP e suas aplicabilidades em um projeto de software livre}
+
+\subsection{Sentar-se junto}
+
+O compartilhamento de um espaço físico comum entre os membros da equipe é a primeira grande diferença entre equipes ágeis, formadas por profissionais que trabalham juntos em uma organização, e equipes de projetos SL, tipicamente distribuídas.
+
+Projetos SL são tipicamente compostos por pessoas distribuídas geograficamente, que muitas vezes nem se conhecem pessoalmente. Essa situação típica é o caso do \radar. Nesse contexto, é inviável seguir a prática de compartilhamento de um espaço físico de trabalho.
+
+No entanto, é preciso considerar que o maior objetivo do compartilhamento do ambiente de trabalho é a promoção da comunicação. No \radar, a ausência da co-localidade é compensada pela comunicação via lista de e-mail e \emph{issue tracker}. Em algumas situações mais específicas, \emph{hangouts} são feitos entre os desenvolvedores. E há também ocasionalmente a promoção de \emph{hackathons}, onde o trabalho co-localizado é exercido intensamente por um curto período de tempo. 
+
+A utilização de listas de e-mail e \emph{issue tracks} é bem comum também em outros projetos SL~\cite{Hugo2010Worlds}. Também encontramos evidências sobre a promoção de \emph{hackathons} periódicos em outros projetos~\cite{During2006Pypy}. Não temos notícias ou referências sobre a utilização de \emph{hangouts} em outros projetos SL. 
+
+\subsection{Equipe integral}
+
+Acreditamos que essa prática a princípio não se aplica aos projetos SL, uma vez que todos os contribuidores de um projeto SL formam a ``equipe''. Assim, a adesão a essa prática em um projeto SL é compulsória.
+
+Em organizações, a orientação para uma equipe integral faz sentido pois muitas vezes há uma equipe comprometida com o produto, mas algumas atividades são terceirizadas para outras equipes da organização, tais como atividades de testes ou implantação. Em projetos SL a princípio não há o conceito de ``outras pessoas da organização fora da equipe''.
+
+No entanto, uma interpretação mais específica pode ser feita no contexto de grupos de alunos trabalhando no \radar para uma disciplina: o sucesso da equipe no contexto da disciplina não pode depender de membros do projeto que não estejam no grupo da disciplina. O mesmo vale para \emph{hackathons}: atingir um objetivo em um \emph{hackathon} não pode depender de contribuidores não presentes no \emph{hackathon}. Assim, no contexto de uma disciplina ou de um \emph{hackathon}, a equipe integral é uma prática importante a ser seguida em projetos SL.
+
+\subsection{Ambiente informativo}
+
+Em um projeto Software Livre não faz sentido falar de um ambiente \emph{físico} informativo. Mas no \radar, temos algumas informações que poderiam formar um espaço \emph{virtual} informativo, tais como: estado da \emph{build} executada pela integração contínua, quantidade de visitas à aplicação no período, número de curtidas no Facebook  no período, quantidade de linhas de código entregues no período, quantidade de issues fechadas no período, métricas de qualidade de código (atualmente em andamento). No contexto do \radar, o problema é que todas essas informações estão dispersas em páginas diferentes. Mas se fossem integradas em um único espaço virtual, formariam um ambiente informativo equivalente à prática da XP que poderia trazer novos benefícios ao projeto. Assim acreditamos que essa prática da XP é aplicável e desejável a projetos SL.
+
+\subsection{Trabalho energizado}
+
+\subsection{Programação em par}
+
+\subsection{Histórias}
+
+\subsection{Ciclo semanal}
+
+\subsection{Ciclo trimestral}
+
+\subsection{Folga}
+
+\subsection{\emph{Build} de dez minutos}
+
+\subsection{Integração contínua}
+
+\subsection{Desenvolvimento Orientado a Testes}
+
+\subsection{Design incremental}
+
+\subsection{Jogo de Planejamento}
+
+\subsection{Fases pequenas}
+
+\subsection{Metáfora}
+
+\subsection{Design Simples}
+
+\subsection{Testes de Aceitação}
+
+\subsection{Semana de 40 horas}
+
+\subsection{Propriedade Coletiva}
+
+\subsection{Padronização do Código}
+
+\subsection{Refatoração}
+
+
+
+\section{Ameaças a validade}
+
+Viés: alunos UnB podem ser ``obrigados'' a seguirem algumas práticas ágeis. Por outro lado, a contribuição se caracteriza bem no recorte de projetos SL, já que os alunos decidem as funcionalidades que entregaram (embora haja recomendações, essas recomendações acontecem para qualquer contribuidor).
+
+Estudo de caso vs análise por amostragem vs simulação.
+
+\section{Conclusão}
+
+Diferença: time profissional comprometido com meta vs voluntariarismo mais oportunístico...
+
+\bibliographystyle{sbc}
+\bibliography{praticas-ageis}
+
+\end{document}
