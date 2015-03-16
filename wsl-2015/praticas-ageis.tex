@@ -42,6 +42,8 @@ Iremos adotar como referência as práticas da Programação Extrema (XP) e iremos e
 
 \section{Introdução}
 
+\textbf{Short paper: de 6 a 8 pgs}; \textbf{Full paper: de 12 a 16 pgs}
+
 Embora surgidas em contextos diferentes, e com motivações diferentes, há vários aspectos em comum entre as práticas ágeis e as práticas tradicionalmente adotadas em projetos de software livre. Essa relação já tem sido estudada por pesquisadores, principalmente no contexto de projetos livres sem o patrocínio de alguma organização.
 
 Neste artigo apresentaremos um projeto de software livre, o \radarp, como estudo de caso sobre a aplicabilidade das práticas ágeis em um projeto de software livre não-comercial. Iremos adotar como referência as práticas da Programação Extrema e iremos explorar:
@@ -114,6 +116,8 @@ Apresentaremos agora brevemente as práticas da XP descritas na segunda edição do
 
 \section{Trabalhos relacionados: práticas ágeis em projetos software livre}
 
+Acho q não vai ter seção de trabalhos relacionados, mas a gente coloca todas essas referências ao longo do texto.
+
 Intro do livro XP, por Erich Gamma, já fala as práticas ágeis que o projeto Eclipse utiliza! Várias são listadas, mas ele fala que nem todas são usadas.
 
 Citando galera~\cite{Ahalt2014Water, Turnu2004TddSimulating, Tsirakidis2009SuccessFailures}
@@ -164,9 +168,22 @@ Em um projeto Software Livre não faz sentido falar de um ambiente \emph{físico} 
 
 \subsection{Trabalho energizado}
 
+No modo de desenvolvimento distribuído, cada colaborador age voluntariamente e, portanto, é autônomo para decidir a distribuição de seu esforço ao longo do tempo. Um colaborador pode individualmente seguir a prática de trabalho energizado e trabalhar apenas quando se sentir produtivo, mas acreditamos que não faz sentido falar dessa prática como algo adotado pelo projeto.
+
+No caso dos \emph{hackathons}, a situação é extremamente oposta. Como são raros momentos com apenas poucos dias de duração, é comum que os participantes trabalhem durante todo o dia incluindo até a madrugada. É a tentativa de aproveitar ao máximo possível um momento de esforço intensivo e de possibilidade de interação presencial com os outros membros do projeto. 
+
+No modo de disciplina a lógica é similar ao \emph{hackathon}, mesmo que mesmo dramática. Os alunos em geral possuem o período da aula para exercer suas atividades. Mesmo que apliquem algum esforço extra-classe, em geral é apenas na sala de aula que todos os membros estão co-localizados, fazendo com que esse momento deva ser aproveitado ao máximo possível, mesmo que eventualmente em alguns dias nem todos os membros estejam tão ``energizados''.
+
 \subsection{Programação em par}
 
+Devido a distribuição geográfica e às limitações tecnológicas ainda existentes, a programação pareada é rara no modo distribuído. No entanto, é comum que um desenvolvedor mais experiente no projeto revise o código entregue por colaboradores mais ocasionais. Essa revisão é feita de forma mais intensa e criteriosa no modo de disciplina. Já no modo de \emph{hackathon} a programação normalmente é adotada, possibilitando a troca de conhecimentos e ideias entre colaboradores que raramente se encontram presencialmente.
+
 \subsection{Histórias}
+
+No \radar, não temos colaboradores atuando com o papel de cliente. Em parte isso se deve ao uso geral da aplicação: qualquer cidadão é um potencial usuário. Por outro lado, essa não é uma limitação inerente a projetos de SL, e mesmo em nosso caso acreditamos que o projeto teria muito a ganhar se trabalhasse de uma forma mais voltada a demandas/sugestões de usuários mais ativos na comunidade. Para amenizar essa situação, nos eventos comunitários dos quais participamos, procuramos ouvir o \emph{feedback} dos usuários do \radar. Uma importante funcionalidade do \radar, que é \rasura, surgiu de sugestões de diversos usuários que tiveram o mesmo sentimento de que tal funcionalidade era desejada. 
+
+Ao mesmo tempo, embora não sejam definidas por usuários, no modo \emph{hackathon} e de disciplina, o time elege funcionalidades a serem implementadas em um dados período de tempo, o que se aproxima da prática da seleção de histórias. Em ambos os casos, desenvolvedores mais experientes no projeto ajudam o time a equacionar o compromisso entre valor e dificuldade de implementação da história.
+
 
 \subsection{Ciclo semanal}
 
@@ -210,7 +227,9 @@ Estudo de caso vs análise por amostragem vs simulação.
 
 \section{Conclusão}
 
-Diferença: time profissional comprometido com meta vs voluntariarismo mais oportunístico...
+Práticas técnias mais propensas a serem adotadas, práticas gerenciais menos propensas... e a práticas gerenciais menos propensas possivelmente pq: time profissional comprometido com meta vs voluntariarismo mais oportunístico...
+
+
 
 \bibliographystyle{sbc}
 \bibliography{praticas-ageis}
