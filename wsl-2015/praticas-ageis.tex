@@ -46,13 +46,13 @@ Iremos adotar como referência as práticas da Programação Extrema (XP) e iremos e
 
 \textbf{Obs: o texto ainda está bem em modo rascunho pq estou tentando primeiro jogar todas as ideias aqui.}
 
-Embora surgidas em contextos diferentes, e com motivações diferentes, há vários aspectos em comum entre as práticas ágeis e as práticas tradicionalmente adotadas em projetos de software livre. Essa relação já tem sido estudada por pesquisadores, principalmente no contexto de projetos livres sem o patrocínio de alguma organização.
+Embora surgidas em contextos diferentes, e com motivações diferentes, há vários aspectos em comum entre as práticas ágeis e as práticas tradicionalmente adotadas em projetos de software livre. Essa relação entre software livre e práticas ágeis tem sido estudada por pesquisadores. Ahalt et al., por exemplo, apresenta um processo de desenvolvimento de software livre no contexto de pesquisas científicas com a adoção de práticas ágeis~\cite{Ahalt2014Water}. Já Corbucci e Goldman aplicaram questionários nas comunidades de software livre e de métodos ágeis para descobrir que ferramentas (alerta de falha em \emph{builds}, \emph{issue trackers}, etc.) cada comunidade valorizava mais. Já Tsirakidis et al., tentam encontrar fatores de sucesso e de falha em projetos de software livre com práticas ágeis~\cite{Tsirakidis2009SuccessFailures}.
 
 Neste artigo apresentaremos um projeto de software livre, o \radarp, como estudo de caso sobre a aplicabilidade das práticas ágeis em um projeto de software livre não-comercial. Iremos adotar como referência as práticas da Programação Extrema e iremos explorar:
 
-1) Quais as práticas ágeis adotadas no Radar e os benefícios que elas trazem no contexto de um projeto de software livre.
+1) Quais as práticas ágeis adotadas no \radarp e os benefícios que elas trazem no contexto de um projeto de software livre.
 
-2) Quais as práticas ágeis não adotadas no Radar e o porquê isso acontece.
+2) Quais as práticas ágeis não adotadas no \radarp e o porquê isso acontece.
 
 Com isso, esperamos apresentar evidências empíricas sobre a relação entre práticas ágeis e projetos de software livre. Como em qualquer estudo de caso, há o viés de que estamos observando apenas um caso particular, mas em compensação podemos fazer uma análise qualitativa com mais profundidade para entender, nesse contexto, porque tais práticas específicas são utilizadas ou não.
 
@@ -116,15 +116,6 @@ Apresentaremos agora brevemente as práticas da XP descritas na segunda edição do
 %\item [Refatoração]
 
 \end{description}
-
-\section{Trabalhos relacionados: práticas ágeis em projetos software livre}
-
-Acho q não vai ter seção de trabalhos relacionados, mas a gente coloca todas essas referências ao longo do texto.
-
-Intro do livro XP, por Erich Gamma, já fala as práticas ágeis que o projeto Eclipse utiliza! Várias são listadas, mas ele fala que nem todas são usadas.
-
-Citando galera~\cite{Ahalt2014Water, Turnu2004TddSimulating, Tsirakidis2009SuccessFailures}
-
 
 \section{Práticas da XP e suas aplicabilidades em um projeto de software livre}
 
@@ -251,9 +242,12 @@ Acreditamos que essas considerações se apliquem a qualquer projeto de SL depende
 
 Viés: alunos UnB podem ser ``obrigados'' a seguirem algumas práticas ágeis. Por outro lado, a contribuição se caracteriza bem no recorte de projetos SL, já que os alunos decidem as funcionalidades que entregaram (embora haja recomendações, essas recomendações acontecem para qualquer contribuidor).
 
-Estudo de caso vs análise por amostragem vs simulação.
+Estudo de caso vs análise por amostragem vs simulação~\cite{Turnu2004TddSimulating}.
 
 \section{Conclusão}
+
+Já no prefácio da segunda edição do livro ``Programação Extrema''~\cite{Beck2000Xp}, Erich Gamma já fala as práticas ágeis utilizadas no projeto Eclipse. No entanto, ele mesmo já declara que nem todas as práticas da XP são usadas. Isso já evidencia como tais práticas devem ser adaptadas e ponderadas dentro de cada contexto. E diferentemente do software produzido por times profissionais que trabalham em tempo integral e de forma co-localizada, projetos de software livre possuem peculiaridades que destoam desse cenário para o qual os métodos ágeis foram pensados.
+
 
 Práticas técnias mais propensas a serem adotadas, práticas gerenciais menos propensas... e a práticas gerenciais menos propensas possivelmente pq: time profissional comprometido com meta vs voluntariarismo mais oportunístico...
 
