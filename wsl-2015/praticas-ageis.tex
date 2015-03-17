@@ -54,9 +54,10 @@ Os métodos ágeis nasceram com um foco bem grande na estruturação de pequenos tim
 
 Para colaborar com a discussão sobre a aplicabilidade das práticas ágeis em projetos SL, neste artigo apresentaremos um projeto de software livre, o \radarp, como estudo de caso. Iremos adotar como referência as práticas da Programação Extrema como representantes das práticas ágeis, e iremos explorar:
 
-1) Quais as práticas da XP adotadas no \radarp e os benefícios que elas trazem no contexto específico de um projeto de software livre.
-
-2) Quais as práticas ágeis não adotadas no \radarp e o porquê isso acontece.
+\begin{itemize}
+\item Quais as práticas da XP adotadas no \radarp e os benefícios que elas trazem no contexto específico de um projeto de software livre.
+\item Quais as práticas ágeis não adotadas no \radarp e o porquê isso acontece.
+\end{itemize}
 
 Nossa intenção é que essas perguntas sejam respondidas com alguma profundidade, uma vez que os autores deste artigo são também desenvolvedores do \radar.
 
@@ -67,7 +68,30 @@ Esperamos que as discussões aqui apresentadas possam ser de utilidade principalm
 
 \section{Sobre o projeto \radarp}
 
+O \radarp é um aplicativo que \rasura.
 
+Características do projeto:
+
+\begin{itemize}
+\item Iniciado em 2012.
+\item Possui cerca de 8,500 linhas de código Python, 1,800 linhas de Java Script e 2,700 linhas de HTML.
+\item Possui cerca de cinco desenvolvedores principais (\emph{core developers}) que contribuem eventualmente com o projeto.
+\item Já recebeu contribuições de cerca de 30 colaboradores diferentes.
+\end{itemize}
+
+Ao estabelecer essa relação, percebemos que adoção ou não, bem como eventuais adaptações, das práticas da XP depende do \emph{modo de desenvolvimento}. Um projeto SL pode receber contribuições em contextos variados. Cada um desses contexto pode impor um modo de desenvolvimento específico, que apresentará forçar favoráveis ou contrárias para a adoção de determinadas práticas. No projeto \radarp, podemos encontrar os seguintes modos de desenvolvimento:
+
+\begin{description}
+
+\item [Desenvolvimento distribuído com contribuição voluntária:] esse é o modo clássico de desenvolvimento de software livre. Colaboradores geograficamente dispersos interagem virtualmente por meio de lista de e-mail e \emph{issue tracker}. As contribuições são voluntárias, então normalmente não se pode controlar o momento e o conteúdo das contribuições. Embora a comunidade possa eleger metas e prioridades, cada contribuidor pode colaborar com o problema que lhe for mais interessante. Este é o modo predominante no desenvolvimento do \radar.
+
+\item [Desenvolvimento com equipe co-localizada em \emph{hackathons}:] eventualmente membros da comunidade se encontram por alguns dias para um esforço intensivo de desenvolvimento. Normalmente esse esforço se insere no contexto de uma competição, para a qual os membros da comunidade estipulam metas a serem atingidas nesse curto espaço de tempo (normalmente de 1 a 4). O \radar já participou de pelo menos três \emph{hackathons} competitivas promovidas por organizações externas ao projeto.
+
+\item [Desenvolvimento feito por estudantes no contexto de uma disciplina:] em cursos superiores relacionados ao desenvolvimento de software é comum a existência de disciplinas que demandem o desenvolvimento de projetos de software feitos pelos estudantes. Algumas universidades já têm incentivados aos alunos que desenvolvam esses projetos criando SL ou contribuindo com projetos SL já existentes. Em particular, há 4 semestres o \radar tem recebido contribuições de alunos de Engenharia de Software da Universidade @@@. Nesse contexto, é possível impor uma disciplina maior no desenvolvimento, exigindo-se o uso de certas práticas dos estudantes, bem como impondo uma revisão de código mais criteriosa. Por outro lado, os estudantes são livres para contribuir com os aspectos que desejarem. 
+
+\end{description}
+
+O primeiro modo é que normalmente se entende como o modo clássico de desenvolvimento de software livre. Entendemos que o segundo modo, embora bem restrito a momentos específicos, seja bem comum em projetos de SL~\cite{During2006Pypy}. Por fim, o terceiro modo pode não ser tão comum em projetos de SL, mas há alguns exemplos, especialmente para softwares nascidos no contexto de pesquisas científicas~\cite{Goldman2012LabXP}.
 
 \section{Métodos ágeis e a Programação Extrema}
 
@@ -127,22 +151,7 @@ Ahalt et al., por exemplo, apresenta um processo de desenvolvimento de software 
 
 Nesta seção descreveremos a relação entre as práticas da XP e as práticas adotadas no \radarp. Quando a prática for aplicada, se possível, tentaremos sugerir uma explicação de como essa prática ajuda e entregar valor no contexto de um projeto de software livre. Quando a prática não for aplicada, tentaremos encontrar as razões e se há práticas alternativas no projeto que procurem atingir o mesmo objetivo que a prática da XP.
 
-Ao estabelecer essa relação, percebemos que adoção ou não, bem como eventuais adaptações, das práticas da XP depende do \emph{modo de desenvolvimento}. Um projeto SL pode receber contribuições em contextos variados. Cada um desses contexto pode impor um modo de desenvolvimento específico, que apresentará forçar favoráveis ou contrárias para a adoção de determinadas práticas. No projeto do \radar, podemos encontrar os seguintes modos de desenvolvimento:
 
-\begin{description}
-
-\item [Desenvolvimento distribuído com contribuição voluntária:] esse é o modo clássico de desenvolvimento de software livre. Colaboradores geograficamente dispersos interagem virtualmente por meio de lista de e-mail e \emph{issue tracker}. As contribuições são voluntárias, então normalmente não se pode controlar o momento e o conteúdo das contribuições. Embora a comunidade possa eleger metas e prioridades, cada contribuidor pode colaborar com o problema que lhe for mais interessante. Este é o modo predominante no desenvolvimento do \radar.
-
-\item [Desenvolvimento com equipe co-localizada em \emph{hackathons}:] eventualmente membros da comunidade se encontram por alguns dias para um esforço intensivo de desenvolvimento. Normalmente esse esforço se insere no contexto de uma competição, para a qual os membros da comunidade estipulam metas a serem atingidas nesse curto espaço de tempo (normalmente de 1 a 4). O \radar já participou de pelo menos três \emph{hackathons} competitivas promovidas por organizações externas ao projeto.
-
-\item [Desenvolvimento feito por estudantes no contexto de uma disciplina:] em cursos superiores relacionados ao desenvolvimento de software é comum a existência de disciplinas que demandem o desenvolvimento de projetos de software feitos pelos estudantes. Algumas universidades já têm incentivados aos alunos que desenvolvam esses projetos criando SL ou contribuindo com projetos SL já existentes. Em particular, há 4 semestres o \radar tem recebido contribuições de alunos de Engenharia de Software da Universidade @@@. Nesse contexto, é possível impor uma disciplina maior no desenvolvimento, exigindo-se o uso de certas práticas dos estudantes, bem como impondo uma revisão de código mais criteriosa. Por outro lado, os estudantes são livres para contribuir com os aspectos que desejarem. 
-
-\end{description}
-
-O primeiro modo é que normalmente se entende como o modo clássico de desenvolvimento de software livre. Entendemos que o segundo modo, embora bem restrito a momentos específicos, seja bem comum em projetos de SL~\cite{During2006Pypy}. Por fim, o terceiro modo pode não ser tão comum em projetos de SL, mas há alguns exemplos, especialmente para softwares nascidos no contexto de pesquisas científicas~\cite{Goldman2012LabXP}.
-
-
- 
 
 \subsection{Sentar-se junto}
 
