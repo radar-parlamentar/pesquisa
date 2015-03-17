@@ -12,13 +12,13 @@
 \usepackage{xspace}
 
 \newcommand{\rasura}{@@@\xspace}     
-\newcommand{\radarp}{\rasura}     
-\newcommand{\radar}{\rasura}
+\newcommand{\radarp}{PROJETO\xspace}     
+\newcommand{\radar}{PROJETO\xspace}
      
      
 \sloppy
 
-\title{\radarp\footnote{O nome do projeto utilizado neste estudo de caso, assim como qualquer contexto que possibilite sua fácil identificação, serão ocultos com a rasura ``\rasura'' devido ao sistema de \emph{blind review} do WSL 2015.} : práticas ágeis em um projeto de software livre}
+\title{\radarp\footnote{Devido ao sistema de \emph{blind review} do WSL 2015, o nome do projeto utilizado neste estudo de caso será rasurado com ``\radar''. Outros contextos que possibilitem a fácil identificação do projeto serão rasurados com ``\rasura'' .} : práticas ágeis em um projeto de software livre}
 
 
 
@@ -43,6 +43,8 @@ Iremos adotar como referência as práticas da Programação Extrema (XP) e iremos e
 \section{Introdução}
 
 \textbf{Short paper: de 6 a 8 pgs}; \textbf{Full paper: de 12 a 16 pgs}
+
+\textbf{Obs: o texto ainda está bem em modo rascunho pq estou tentando primeiro jogar todas as ideias aqui.}
 
 Embora surgidas em contextos diferentes, e com motivações diferentes, há vários aspectos em comum entre as práticas ágeis e as práticas tradicionalmente adotadas em projetos de software livre. Essa relação já tem sido estudada por pesquisadores, principalmente no contexto de projetos livres sem o patrocínio de alguma organização.
 
@@ -102,6 +104,7 @@ Apresentaremos agora brevemente as práticas da XP descritas na segunda edição do
 
 \item [Design incremental:] investimento em um bom \emph{design} deve ser realizado constantemente ao longo do desenvolvimento do sistema. Um bom \emph{design} promoverá a capacidade de introduzir mudanças no sistema posteriormente, o que é o grande objetivo da XP (\emph{abrace a mudança}). A melhoria contínua do \emph{design} é preferível a uma grande fase inicial de \emph{design}.
 
+% práticas da 1a edição da XP
 %\item [Jogo de Planejamento]
 %\item [Fases pequenas]
 %\item [Metáfora]
@@ -187,35 +190,60 @@ Ao mesmo tempo, embora não sejam definidas por usuários, no modo \emph{hackathon
 
 \subsection{Ciclo semanal}
 
+No modo de desenvolvimento distribuído com contribuições voluntárias tal prática não é imposta, já que nesse modo as contribuições normalmente ocorrem intervalos maior do que uma semana. Já no modo de \emph{hackathon}, o evento todo constitui um único ciclo curto. Por fim, mesmo no modo de disciplina, uma semana é um período curto demais, já que a semana conta com apenas duas aulas na semana (X horas).
+
 \subsection{Ciclo trimestral}
+
+Embora informal, o \radar apresenta períodos no qual o esforço da comunidade se concentra majoritariamente em determinadas funcionalidades. Embora não seja preciso, acreditamos que esse período em que se eleja prioridade que se reflita mais sobre os rumos do projeto seja semestral. Um fator importante para essa reflexão semestral é a discussão das potenciais contribuições que os alunos das disciplinas possam entregar ao projeto, já que as disciplinas são semestrais.
 
 \subsection{Folga}
 
+Acreditamos que esse princípio não se aplica ao modo de desenvolvimento distribuído com contribuições voluntárias. No entanto, pode ser aplicado no planejamento de \emph{hackathons} e das disciplinas. No entanto, na prática acreditamos que normalmente ``folga'' não seja um valor predominante na execução de \emph{hackathons}. Quanto às contribuições nas disciplinas, TODO...
+
 \subsection{\emph{Build} de dez minutos}
+
+O \radar possui uma bateria de testes automatizados. O maior foco é nos testes de unidade, que são os que fazem testes das classes e métodos do código (isolando totalmente ou não as unidades). O projeto possui ainda alguns poucos testes de integração com serviços externos (\rasura), mas nenhum teste de usuário, no qual a interface seria manipulada de forma automatizada sob a perspectiva do usuário. A presença de poucos testes de integração e nenhum teste de aceitação faz com que a \emph{build} seja executada em menos de 2 minutos.
+
+Acreditamos que independente do modo de desenvolvimento do projeto de SL, esta prática seja importante e deva ser seguida por qualquer projeto de software no qual o uso de testes automatizados se aplique.
 
 \subsection{Integração contínua}
 
+A cada entrega realizada no repositório, a bateria de testes automatizados é executada. Caso a \emph{build} falhe, um e-mail é enviado aos membros do projeto, dando visibilidade imediata do ocorrido. 
+
+Acreditamos que a existência de uma bateria de testes automatizados traga um valor a mais para projetos de SL dependentes de voluntários, quando comparado a projetos de software em geral. Isso porque colaboradores dedicam seu pouco tempo livre ao desenvolvimento do projeto. A existência de uma bateria de testes dá confiança ao colaborador de que ele não está inserindo defeitos no projeto, dispensando-o do esforço de ter uma compreensão de todos os aspectos do sistema, podendo se focar apenas na contribuição de seu interesse.
+
+No \radar tomamos um passo além da integração contínua e estamos investindo num fluxo de entrega contínua, no qual a integração contínua dispara a implantação da nova versão da aplicação caso a bateria de testes tenha sucesso. Novamente, no contexto de projetos de SL dependentes de voluntários isso tem um valor a mais, uma vez que se alivia o esforço de gerenciamento da infra. Sem a implantação automatizada, toda contribuição entregue por um colaborador só vira valor para o usuário depois que outro colaborador com acesso à infra atualize o sistema em produção. Com a implantação contínua, o código entregue por qualquer colaborador vira valor imediatamente valor para o usuário, acelerando o ciclo de \emph{feedback}, o que é importante, pois quanto mais cedo um voluntário tenha o \emph{feedback} de suas alterações, maiores são as chances de que ele esteja disposto a refinar a solução baseando-se no \emph{feedback} obtido. 
+
+Acreditamos que a implementação do fluxo de entrega contínua seja uma estratégia crítica, pois atualmente um esforço em uma \emph{hackathon} não pode ser publicizado sem que um dos participantes com domínio da infra (atualmente são dois no \radar) estejam presentes no evento. No modo da disciplina isso também já é estratégico, já que os alunos não possuem acesso à infra de produção.
+
 \subsection{Desenvolvimento Orientado a Testes}
+
+No modo de desenvolvimento no qual voluntários contribuem distribuidamente não é possível impor uma disciplina de ``testes antes'', como advoga o TDD, já que o código é entregue com os testes, não sendo possível a verificação do que veio antes. Mesmo a entrega de código com testes é uma exigência que em alguns contextos poderia inibir a colaboração. Portanto no \radar a entrega de testes não é exigida. Por outro lado, em alguns contextos acontece de que desenvolvedores refatorem e entreguem testes para código já entregue por outros colaboradores.
+
+No modo \emph{hackathon} a pressa em se gerar resultados tendo em vistas uma possível premiação é um grande fator para a geração de dívida técnica. Ou seja, nessa situação é comum que muito código seja produzido sem testes automatizados. Mas assim como no modo distribuído, em alguns contextos parte da dívida técnica é paga depois do \emph{hackathon}, com a produção de testes automatizados.
+
+Por fim, o modo de disciplina é o mais favorável à aplicação de uma maior disciplina na entrega de código com testes automatizados. Nesse contexto, é possível colocar como objetivo da disciplina a prática de TDD, por exemplo. No entanto, mesmo que o professor possa impor essas linhas, a comunidade não consegue obrigar que os alunos entreguem o código com testes, embora normalmente isso não aconteça.
+
+Por fim, mesmo com todas essas dificuldades, vale ressaltar que na última medição, o \radar apresentou um índice de cobertura de testes de 64\%, o que consideramos um resultado satisfatório.
 
 \subsection{Design incremental}
 
-\subsection{Jogo de Planejamento}
+Em todos os modos de desenvolvimento há um esforço por parte dos desenvolvedores mais experientes em se manter um \emph{design} limpo e elegante para a aplicação. Isso é feito com refatorações sobre código entregue por outros colaboradores e com aconselhamento a esses outros colaboradores sobre o que fazer. 
 
-\subsection{Fases pequenas}
+Um desafio em particular dentro de uma estratégia para um \emph{design} limpo que evolua incrementalmente é o desincentivo à entrega de código que não entrega valor ao usuário. Consideramos que isso acontece quando um colaborador se antecipa em entregar código que só terá valor quando uma outra funcionalidade for implementada. Se não há uma perspectiva próxima para a implementação dessa nova funcionalidade, o código entregue pode acabar não tendo uma utilidade. Isso trás dois grandes problemas no contexto de um projeto SL dependente de colaborações voluntárias: 1) o esforço gasto pelo colaborador poderia ter sido canalizado para algo de mais valor, que ajudaria de fato na melhoria do software; e 2) embora o código não esteja sendo utilizado, é preciso mantê-lo e continuamente garantir que o mesmo não seja quebrado, o que eventualmente pode demandar um esforço extra de outros colaboradores que poderia não ser necessário.
 
-\subsection{Metáfora}
+Acreditamos que essas considerações se apliquem a qualquer projeto de SL dependente de voluntários.
 
-\subsection{Design Simples}
-
-\subsection{Testes de Aceitação}
-
-\subsection{Semana de 40 horas}
-
-\subsection{Propriedade Coletiva}
-
-\subsection{Padronização do Código}
-
-\subsection{Refatoração}
+% práticas da 1a edição da XP
+%\subsection{Jogo de Planejamento}
+%\subsection{Fases pequenas}
+%\subsection{Metáfora}
+%\subsection{Design Simples}
+%\subsection{Testes de Aceitação}
+%\subsection{Semana de 40 horas}
+%\subsection{Propriedade Coletiva}
+%\subsection{Padronização do Código}
+%\subsection{Refatoração}
 
 
 
@@ -229,6 +257,7 @@ Estudo de caso vs análise por amostragem vs simulação.
 
 Práticas técnias mais propensas a serem adotadas, práticas gerenciais menos propensas... e a práticas gerenciais menos propensas possivelmente pq: time profissional comprometido com meta vs voluntariarismo mais oportunístico...
 
+Também constatamos que as práticas gerencias são as q mais variam com o modo de desenvolvimento, enquanto que as práticas técnicas tem maior potencial de permanecerem uniforme pelos modos.
 
 
 \bibliographystyle{sbc}
