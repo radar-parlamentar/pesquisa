@@ -66,11 +66,11 @@ Com este artigo, esperamos apresentar evidências empíricas sobre a relação entre
 Esperamos que as discussões aqui apresentadas possam ser de utilidade principalmente para comunidades de SL que estejam adotando ou discutindo a adoção de práticas ágeis. Além das comunidade de SL, acreditamos que possam se benefeciar da discussão desenvolvedores atuando em equipes geograficamente distribuídas, mesmo em projetos não SL.
 
 
-\section{Sobre o projeto \radarp}
+\section{Sobre o projeto \radarp e seus modos de desenvolvimento}
 
 O \radarp é um aplicativo que \rasura.
 
-Características do projeto:
+Características gerais do projeto:
 
 \begin{itemize}
 \item Iniciado em 2012.
@@ -79,19 +79,21 @@ Características do projeto:
 \item Já recebeu contribuições de cerca de 30 colaboradores diferentes.
 \end{itemize}
 
-Ao estabelecer essa relação, percebemos que adoção ou não, bem como eventuais adaptações, das práticas da XP depende do \emph{modo de desenvolvimento}. Um projeto SL pode receber contribuições em contextos variados. Cada um desses contexto pode impor um modo de desenvolvimento específico, que apresentará forçar favoráveis ou contrárias para a adoção de determinadas práticas. No projeto \radarp, podemos encontrar os seguintes modos de desenvolvimento:
+Um projeto SL pode receber contribuições em contextos variados. Cada um desses contextos pode impor um \emph{modo de desenvolvimento} específico, que apresentará forças favoráveis ou contrárias à adoção de determinadas práticas ágeis. No \radarp, identificamos três modos de desenvolvimento, que podem inclusive coexistir no tempo. São eles:
 
 \begin{description}
 
-\item [Desenvolvimento distribuído com contribuição voluntária:] esse é o modo clássico de desenvolvimento de software livre. Colaboradores geograficamente dispersos interagem virtualmente por meio de lista de e-mail e \emph{issue tracker}. As contribuições são voluntárias, então normalmente não se pode controlar o momento e o conteúdo das contribuições. Embora a comunidade possa eleger metas e prioridades, cada contribuidor pode colaborar com o problema que lhe for mais interessante. Este é o modo predominante no desenvolvimento do \radar.
+\item [Desenvolvimento distribuído com contribuição voluntária:] esse é o modo clássico de desenvolvimento de software livre, que Raymond descreveu como o modelo Bazar, adotado no desenvolvimento do kernel Linux~\cite{Raymond1999Bazaar}. Colaboradores geograficamente dispersos colaboram voluntariamente por meios virtuais, que no caso do \radar são principalmente a lista de e-mail e o \emph{issue tracker}. 
 
-\item [Desenvolvimento com equipe co-localizada em \emph{hackathons}:] eventualmente membros da comunidade se encontram por alguns dias para um esforço intensivo de desenvolvimento. Normalmente esse esforço se insere no contexto de uma competição, para a qual os membros da comunidade estipulam metas a serem atingidas nesse curto espaço de tempo (normalmente de 1 a 4). O \radar já participou de pelo menos três \emph{hackathons} competitivas promovidas por organizações externas ao projeto.
+O aspecto \emph{voluntário} das contribuições implica na impossibilidade de gerenciar os membros como em um projeto tradicional. Uma consequência é a impossibilidade de se prever ou estimar quando uma determinada tarefa será concluída. Embora a comunidade possa eleger prioridades, também não é possível controlar o que cada colaborador irá fazer, pois os colaboradores são livres para escolherem as tarefas que acharem mais atraentes. Este é o modo predominante no desenvolvimento do \radar, que por brevidade será referido como \emph{modo distribuído}.
 
-\item [Desenvolvimento feito por estudantes no contexto de uma disciplina:] em cursos superiores relacionados ao desenvolvimento de software é comum a existência de disciplinas que demandem o desenvolvimento de projetos de software feitos pelos estudantes. Algumas universidades já têm incentivados aos alunos que desenvolvam esses projetos criando SL ou contribuindo com projetos SL já existentes. Em particular, há 4 semestres o \radar tem recebido contribuições de alunos de Engenharia de Software da Universidade @@@. Nesse contexto, é possível impor uma disciplina maior no desenvolvimento, exigindo-se o uso de certas práticas dos estudantes, bem como impondo uma revisão de código mais criteriosa. Por outro lado, os estudantes são livres para contribuir com os aspectos que desejarem. 
+\item [Desenvolvimento com equipe co-localizada em \emph{hackathons}:] eventualmente membros da comunidade se encontram por alguns dias para um esforço intensivo de desenvolvimento. Normalmente esse esforço se insere no contexto de uma competição, para a qual a equipe participante do \emph{hackathon} estipula metas a serem atingidas nesse curto espaço de tempo (normalmente de 1 a 4 dias). O \radar já participou de pelo menos três \emph{hackathons} competitivos promovidas por organizações externas ao projeto. A participação em \emph{hackathons} parece ser uma prática comum em projetos SL. O projeto PyPy, por exemplo, organiza periodicamente \emph{hackathons} não-competitivas, denominadas de \emph{sprints}~\cite{During2006Pypy}. Esse modo de desenvolvimento será referido como \emph{modo hackathon}.
+
+\item [Desenvolvimento no contexto de uma disciplina universitária:] em cursos superiores relacionados ao desenvolvimento de software é comum a existência de disciplinas que demandem o desenvolvimento de projetos de software feitos pelos estudantes. Alguns cursos já têm incentivado os alunos a desenvolverem esses projetos criando software livre ou contribuindo com projetos SL já existentes~\cite{Goldman2012LabXP}. Em particular, estamos no quinto semestre seguido no qual o \radar tem recebido contribuições de alunos de Engenharia de Software da Universidade \rasura. 
+
+Nesse modo de desenvolvimento, um grupo de estudantes possui cerca de cinco membros e contribui com o projeto ao longo de um semestre letivo, se dedicando cerca de 8 horas semanais, das quais pelo menos 4 horas de forma co-localizada. Nesse contexto, é possível cobrar dos estudantes uma disciplina maior no desenvolvimento, exigindo-se o uso de certas práticas ágeis, bem como impondo uma revisão mais criteriosa sobre o código entregue. Por outro lado, os estudantes são livres para contribuir com as funcionalidades que acharem mais atraentes. Nos referiremos a esse modo de desenvolvimento como \emph{modo disciplina}.
 
 \end{description}
-
-O primeiro modo é que normalmente se entende como o modo clássico de desenvolvimento de software livre. Entendemos que o segundo modo, embora bem restrito a momentos específicos, seja bem comum em projetos de SL~\cite{During2006Pypy}. Por fim, o terceiro modo pode não ser tão comum em projetos de SL, mas há alguns exemplos, especialmente para softwares nascidos no contexto de pesquisas científicas~\cite{Goldman2012LabXP}.
 
 \section{Métodos ágeis e a Programação Extrema}
 
