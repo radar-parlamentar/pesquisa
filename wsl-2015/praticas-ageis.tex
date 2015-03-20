@@ -48,7 +48,7 @@ Iremos adotar como referência as práticas da Programação Extrema (XP) e iremos e
 
 Embora surgidas em contextos diferentes, e com motivações diferentes, há vários aspectos em comum entre as práticas ágeis e as práticas tradicionalmente adotadas em projetos de software livre (SL). Essa relação entre software livre e práticas ágeis tem sido estudada por pesquisadores~\cite{Hugo2010Worlds, During2006Pypy}. 
 
-Logo no prefácio da segunda edição do livro ``Programação Extrema''~\cite{Beck2000Xp}, Erich Gamma já aborda as práticas ágeis utilizadas em um projeto de software livre, o projeto Eclipse. Essa menção sugere uma proximidade entre esses dois mundos. No entanto, ainda nesse prefácio, é declarado que nem todas as práticas da XP são usadas no projeto Eclipse. Seriam as práticas da XP não utilizadas nesse caso inadequadas para um projeto SL? 
+Logo no prefácio da segunda edição do livro ``Programação Extrema''~\cite{Beck2004Xp}, Erich Gamma já aborda as práticas ágeis utilizadas em um projeto de software livre, o projeto Eclipse. Essa menção sugere uma proximidade entre esses dois mundos. No entanto, ainda nesse prefácio, é declarado que nem todas as práticas da XP são usadas no projeto Eclipse. Seriam as práticas da XP não utilizadas nesse caso inadequadas para um projeto SL? 
 
 Os métodos ágeis nasceram com um foco bem grande na estruturação de pequenos times co-localizados que se dedicam em tempo integral a um projeto. Já projetos SL, por outro lado, podem ter dezenas ou centenas de colaboradores geograficamente distribuídos e que colaboram de forma voluntária. Essas diferenças põe em cheque a aplicabilidade das práticas ágeis em projetos SL.
 
@@ -102,7 +102,7 @@ Os métodos ágeis nasceram como uma alternativa aos chamados métodos tradicionais
 
 Intro sobre XP... valores... \emph{Comunicação}, \emph{Coragem}, \emph{Feedback}, \emph{Respeito}, e \emph{Simplicidade}.
 
-Apresentaremos agora brevemente as práticas da XP descritas na segunda edição do livro \emph{Extreme Programming Explained}~\cite{Beck2000Xp}:
+Apresentaremos agora brevemente as práticas da XP descritas na segunda edição do livro \emph{Extreme Programming Explained}~\cite{Beck2004Xp}:
 
 \begin{description}
 
@@ -155,7 +155,7 @@ Ahalt et al. apresentam um processo de desenvolvimento de software livre com a a
 
 Tsirakidis et al. tentam encontrar fatores de sucesso e de falha em projetos ágeis executados em organizações desenvolvedoras de software livre~\cite{Tsirakidis2009SuccessFailures}. Baseando-se em entrevistas com membros de dois desses projetos ágeis e na análise de perfis de seus participantes, os autores concluem como fatores de sucesso: 1) comunicação síncrona e constante, em contraste com conversas espalhadas por diferentes listas de e-mails; 2) consistência na metodologia de desenvolvimento; 3) cultura de testes; e 4) aceitação e tratamento de limitações do ambiente. Mas o mais importante desse artigo em nosso contexto é que ele apresenta uma evidência de que uma ``organização desenvolvedora de software livre'' adota oficialmente práticas ágeis de desenvolvimento de software.
 
-Temos também Turnu et al. que apresentam um modelo para simular o processo de desenvolvimento de projetos SL~\cite{Turnu2004TddSimulating}. Eles utilizam o modelo para comparar a produção de SL utilizando TDD versus a produção do SL sem utilizar essa prática ágil. Eles concluem que a prática de TDD em projetos SL aumenta o tempo gasto para se escrever uma linha de código de produção, mas que porém reduz os defeitos no software. 
+Temos também Turnu et al. que apresentam um modelo para simular o processo de desenvolvimento de projetos SL~\cite{Turnu2004TddSimulating}. Eles utilizam o modelo para comparar a produção de SL utilizando TDD~\cite{Beck2002Tdd} versus a produção do SL sem utilizar essa prática ágil. Eles concluem que a prática de TDD em projetos SL aumenta o tempo gasto para se escrever uma linha de código de produção, mas que porém reduz os defeitos no software. 
 
 Com exceção do artigo de Corbucci e Goldman, em todas essas referências encontradas a ideia de aplicar práticas ágeis em projetos SL aparece de maneira natural, desejável e sem empecilhos. Já Corbucci e Goldman começam questionando esse relacionamento, mas por meio de seus questionários concluem que as práticas adotadas nas comunidades não são tão diferentes. No entanto, esse questionário abordou apenas alguns aspectos do desenvolvimento, se focando em ferramentas e canais de comunicação. 
 
@@ -163,8 +163,9 @@ Não encontramos nenhum artigo fazendo nenhuma análise mais extensiva sobre a com
 
 \section{Práticas da XP e suas aplicabilidades em um projeto de software livre}
 
-Nesta seção descreveremos a relação entre as práticas da XP e as práticas adotadas no \radarp. Quando a prática for aplicada, se possível, tentaremos sugerir uma explicação de como essa prática ajuda e entregar valor no contexto de um projeto de software livre. Quando a prática não for aplicada, tentaremos encontrar as razões e se há práticas alternativas no projeto que procurem atingir o mesmo objetivo que a prática da XP.
+Nesta seção descreveremos a relação entre as práticas da XP e as práticas adotadas no \radarp. Quando a prática for aplicada, se possível, tentaremos sugerir uma explicação de como essa prática ajuda e entregar valor no contexto específico de um projeto de SL. Quando a prática não for aplicada, tentaremos encontrar as razões para tal e se há práticas alternativas no projeto que procuram atingir o mesmo objetivo que a prática da XP. 
 
+Nossa intenção não é somente comparar as práticas da XP com as práticas do \radar, mas sim as práticas da XP com práticas de projetos SL. Para que a análise das práticas da XP no \radar possa ser generalizada para outros projetos SL, iremos contextualizar essa comparação com base no que Raymond define como as características de projetos SL desenvolvidos no modelo de Bazar~\cite{Raymond1999Bazaar}. Assim, ao identificar características do \radar com aquelas apresentadas por Raymond, caracterizamos o \radar como uma amostra válida de um típico projeto SL.
 
 
 \subsection{Sentar-se junto}
@@ -210,13 +211,17 @@ Ao mesmo tempo, embora não sejam definidas por usuários, no modo \emph{hackathon
 
 \subsection{Ciclo semanal}
 
-No modo de desenvolvimento distribuído com contribuições voluntárias tal prática não é imposta, já que nesse modo as contribuições normalmente ocorrem intervalos maior do que uma semana. Já no modo de \emph{hackathon}, o evento todo constitui um único ciclo curto. Por fim, mesmo no modo de disciplina, uma semana é um período curto demais, já que a semana conta com apenas 8 horas de desenvolvimento.
+No modo de desenvolvimento distribuído com contribuições voluntárias tal prática não é imposta, já que nesse modo as contribuições normalmente ocorrem em intervalos maior do que uma semana. Já no modo de \emph{hackathon}, o evento todo constitui um único ciclo curto. Por fim, mesmo no modo de disciplina, uma semana é um período curto demais, já que a semana conta com apenas 8 horas de desenvolvimento.
 
-1a edição: ciclos curtos; SL: release early
+Porém, cabe lembrar que a primeira edição da XP~\cite{Beck2000Xp1} apresentava a prática de \emph{fases pequenas}. Essa prática se relaciona com o princípio de ``libere cedo e frequentemente; e ouça seus clientes'', utilizada no desenvolvimento do \emph{kernel} do Linux~\cite{Raymond1999Bazaar}.  Ou seja, mais do que entregar semanalmente, o intuito é entregar o mais cedo possível para acelerar o ciclo de \emph{feedback}.
+
+Embora o \radar não apresente ciclos semanais, suas funcionalidades costumam ser entregues o mais cedo possível. O maior exemplo foi o nascimento do próprio projeto, que nasceu não como um sistema em si, mas meramente como um \emph{post} de \emph{blog} apresentando uma análise específica. Dessa forma, acreditamos que projetos SL que seguem o princípio de ``libere cedo e frequentemente'' se adequam ao intuito da prática da XP denominada ``ciclo semanal''.
 
 \subsection{Ciclo trimestral}
 
-Embora informal, o \radar apresenta períodos no qual o esforço da comunidade se concentra majoritariamente em determinadas funcionalidades. Embora não seja preciso, acreditamos que esse período em que se eleja prioridade que se reflita mais sobre os rumos do projeto seja semestral. Um fator importante para essa reflexão semestral é a discussão das potenciais contribuições que os alunos das disciplinas possam entregar ao projeto, já que as disciplinas são semestrais.
+Reflexões de médio e longo prazo sobre o projeto são também sugeridas por Raymond: ``Frequentemente, as soluções mais impressionantes e inovadoras surgem ao se perceber que o seu conceito do problema estava errado''~\cite{Raymond1999Bazaar}. Ambos os métodos de Raymond e de Beck reconhecem que mais difícil do que construir é saber o que deve ser construído.
+
+No \radar não há ciclos ou momentos formais para essas reflexões. No entanto, o início da colaboração dos alunos das disciplinas a cada semestre gera um debate sobre as prioridades do projeto, principalmente sobre demandas que podem ser potencialmente atacadas pelos alunos. Com isso, o semestre acaba se tornando o intervalo de tempo entre esses momentos de maior reflexão sobre o projeto.
 
 \subsection{Folga}
 
@@ -271,7 +276,7 @@ Acreditamos que essas considerações se apliquem a qualquer projeto de SL depende
 
 \section{Ameaças a validade}
 
-O primeiro e maior viés que temos é discutir os relacionamentos entre SL e práticas ágeis com base na análise de apenas um projeto SL. Contudo, esse viés é normalmente encontrado em estudos de caso. Em compensação, diferentemente de estudos quantitativos envolvendo uma grande amostra de projetos, podemos mais facilmente apresentar explicações com certa profundidade sobre as relações encontradas. Além disso, nossa análise é embasada na literatura, tendo como principal referência sobre software livre o artigo ``A Catedral e o Bazar''~\cite{Raymond1999Bazaar}, e como principal referência sobre práticas ágeis o livro ``Programação Extrema''~\cite{Beck2000Xp}.
+O primeiro e maior viés que temos é discutir os relacionamentos entre SL e práticas ágeis com base na análise de apenas um projeto SL. Contudo, esse viés é normalmente encontrado em estudos de caso. Em compensação, diferentemente de estudos quantitativos envolvendo uma grande amostra de projetos, podemos mais facilmente apresentar explicações com certa profundidade sobre as relações encontradas. Além disso, nossa análise é embasada na literatura, tendo como principal referência sobre software livre o artigo ``A Catedral e o Bazar''~\cite{Raymond1999Bazaar}, e como principal referência sobre práticas ágeis o livro ``Programação Extrema''~\cite{Beck2004Xp}.
 
 % tem gente q tá fazendo até estudo com simluação sobre SL! \cite{Turnu2004TddSimulating}.
 
@@ -281,7 +286,7 @@ Por fim, as práticas da XP foram adotadas como referência de práticas ágeis. Con
 
 \section{Conclusão}
 
-Logo no prefácio da segunda edição do livro ``Programação Extrema''~\cite{Beck2000Xp}, Erich Gamma já aborda as práticas ágeis utilizadas em um projeto de software livre, o projeto Eclipse. No entanto, ele mesmo já declara que nem todas as práticas da XP são usadas. Isso já evidencia como tais práticas devem ser adaptadas e ponderadas dentro de cada contexto. E diferentemente do software produzido por times profissionais que trabalham em tempo integral e de forma co-localizada, projetos de software livre possuem peculiaridades que destoam desse cenário para o qual os métodos ágeis foram pensados.
+Logo no prefácio da segunda edição do livro ``Programação Extrema''~\cite{Beck2004Xp}, Erich Gamma já aborda as práticas ágeis utilizadas em um projeto de software livre, o projeto Eclipse. No entanto, ele mesmo já declara que nem todas as práticas da XP são usadas. Isso já evidencia como tais práticas devem ser adaptadas e ponderadas dentro de cada contexto. E diferentemente do software produzido por times profissionais que trabalham em tempo integral e de forma co-localizada, projetos de software livre possuem peculiaridades que destoam desse cenário para o qual os métodos ágeis foram pensados.
 
 
 Práticas técnias mais propensas a serem adotadas, práticas gerenciais menos propensas... e a práticas gerenciais menos propensas possivelmente pq: time profissional comprometido com meta vs voluntariarismo mais oportunístico...
