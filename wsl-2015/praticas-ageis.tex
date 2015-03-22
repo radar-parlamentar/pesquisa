@@ -39,7 +39,6 @@
 \begin{resumo} 
 Embora surgidas em contextos diferentes, e com motivações diferentes, há vários aspectos em comum entre as práticas ágeis e as práticas tradicionalmente adotadas em projetos de software livre. Neste artigo apresentaremos o projeto \radarp como um estudo de caso sobre a aplicabilidade de práticas ágeis por comunidades desenvolvedoras de software livre. 
 Iremos adotar como referência as práticas da Programação Extrema (XP) e iremos explorar quais são as práticas da XP utilizadas e as não utilizadas no projeto, assim como as motivações para a utilização ou não de cada prática. Com isso, nossa contribuição é a apresentação de evidências empíricas de um caso concreto sobre a relação entre práticas ágeis e projetos de software livre (SL). 
-\todo{Programação extrema é um tipo de prática ágil? Ou um é sinônimo do outro?}
 
 \end{resumo}
 
@@ -49,10 +48,8 @@ Iremos adotar como referência as práticas da Programação Extrema (XP) e iremos e
 % \textbf{Short paper: de 6 a 8 pgs}; \textbf{Full paper: de 12 a 16 pgs}
 
 Embora surgidas em contextos diferentes, e com motivações diferentes, há vários aspectos em comum entre as práticas ágeis e as práticas tradicionalmente adotadas em projetos de software livre (SL). Essa relação entre software livre e práticas ágeis tem sido estudada por pesquisadores~\cite{Hugo2010Worlds, During2006Pypy}. 
-\todo{Não tem recuo no primeiro parágrafo de uma seção?}
 
 Logo no prefácio da segunda edição do livro ``Programação Extrema''~\cite{Beck2004Xp}, Erich Gamma já aborda as práticas ágeis utilizadas em um projeto de software livre, o projeto Eclipse. Essa menção sugere uma proximidade entre esses dois mundos. No entanto, ainda nesse prefácio, é declarado que nem todas as práticas da XP são usadas no projeto Eclipse. Seriam as práticas da XP não utilizadas nesse caso inadequadas para um projeto SL?
-\todo{Não seria interessante especificar (enumerar) quais são essas prática não utilizadas no eclipse?}
 
 Os métodos ágeis nasceram com um foco bem grande na estruturação de pequenos times co-localizados que se dedicam em tempo integral a um projeto. Já projetos SL, por outro lado, podem ter dezenas ou centenas de colaboradores dispersos geograficamente e que colaboram de forma voluntária. Essas diferenças põem em cheque a aplicabilidade das práticas ágeis em projetos SL.
 
@@ -65,8 +62,7 @@ Para colaborar com a discussão sobre a aplicabilidade das práticas ágeis em proj
 
 Nossa intenção é que essas perguntas sejam respondidas com alguma profundidade, uma vez que os autores deste artigo são também desenvolvedores do \radar.
 
-Com este artigo, esperamos apresentar evidências empíricas sobre a relação entre práticas ágeis e projetos de software livre. Em nosso contexto, as análises, interpretações e conclusões se restringem a um grupo restrito de projetos de SL: aqueles que não possuem um apoio financeiro regular de alguma instituição e que, portanto, são mantidos por voluntários. Também entendemos como projetos SL \emph{típicos} aqueles que possuem as características apresentadas por Raymond como o modelo Bazar de desenvolvimento~\cite{Raymond1999Bazaar}.
-\todo{Não vale colocar em note de rodapé uma frase explicando o que é o modelo Bazar? Talvez indicar o link da Wikipedia seja ok também.}
+Com este artigo, esperamos apresentar evidências empíricas sobre a relação entre práticas ágeis e projetos de software livre. Em nosso contexto, as análises, interpretações e conclusões se restringem a um grupo restrito de projetos de SL: aqueles que não possuem um apoio financeiro regular de alguma instituição e que, portanto, são mantidos por voluntários. Também entendemos como projetos SL \emph{típicos} aqueles que possuem as características apresentadas por Raymond como o modelo Bazar de desenvolvimento~\cite{Raymond1999Bazaar}. O modelo Bazar procura explicar o funcionamento e o sucesso do modelo de desenvolvimento do kernel do Linux, no qual toda evolução do software e seu código correspondente são imediatamente liberados aos usuários e a outros desenvolverdores. Esse modelo se contrapõe ao modelo de Catedral, no qual novas mudanças são liberadas somente depois que os principais desenvolvedores considerarem que essa evolução já esteja madura o suficiente.
 
 Esperamos que as discussões aqui apresentadas possam ser úteis principalmente para comunidades de SL que estejam adotando ou discutindo a adoção de práticas ágeis. Além das comunidades de SL, acreditamos que possam se beneficiar da discussão desenvolvedores atuando em equipes geograficamente distribuídas.
 
@@ -82,7 +78,7 @@ Características gerais do projeto:
 \item Possui cerca de 8500 linhas de código Python, 1800 linhas de Java Script e 2700 linhas de HTML.
 \item Possui cerca de cinco desenvolvedores principais (\emph{core developers}).
 \item Já recebeu contribuições de cerca de 30 colaboradores diferentes.
-\item Conta com 449 curtidas em sua página no Facebook.
+\item Conta com 451 curtidas em sua página no Facebook.
 \item Apresentou, em média, pouco mais de 100 visitas mensais nos últimos meses (em época \rasura, tipicamente acontecem picos de acessos).
 \end{itemize}
 
@@ -91,7 +87,6 @@ Um projeto SL pode receber contribuições em contextos variados. Cada um desses c
 \begin{description}
 
 \item [Desenvolvimento distribuído com contribuição voluntária:] esse é o modo clássico de desenvolvimento de software livre, que Raymond descreveu como o modelo Bazar, adotado no desenvolvimento do kernel Linux~\cite{Raymond1999Bazaar}. Colaboradores geograficamente dispersos contribuem voluntariamente por meios virtuais, que no caso do \radar são principalmente a lista de e-mail e o \emph{issue tracker}.
-\todo{Dúvida de formato: isto não seria uma subseção?}
 
 O aspecto \emph{voluntário} das contribuições implica a impossibilidade de gerenciar os membros como em um projeto tradicional. Uma consequência é a impossibilidade de se prever ou estimar quando uma determinada tarefa será concluída. Embora a comunidade possa eleger prioridades, também não é possível controlar o que cada colaborador irá fazer, pois são livres para escolher as tarefas que acharem mais atraentes. Este é o modo predominante no desenvolvimento do \radar que, por brevidade, será referido como \emph{modo distribuído}.
 
@@ -102,24 +97,19 @@ Nesse modo de desenvolvimento, um grupo de estudantes com cerca de cinco membros
 
 \end{description}
 
-Cabe esclarecer algumas peculiaridades da disciplina \rasura, que têm contribuído com o \radar. A disciplina tem a intenção de proporcionar um ambiente real de desenvolvimento de software baseado na metodologia da XP, assim, nela, os alunos interagem diretamente com comunidades de SL. Embora o professor possa interferir na formação dos grupos para garantir algum balanceamento entre eles, a princípio os alunos escolhem os projetos com que querem trabalhar. Dessa forma, os grupos são formados com base no interesse pessoal de cada pessoa, estabelecendo em paralelo com o universo real de trabalho do SL.
-\todo{Que tipo de balanceamento? Gênero, nível de domínio de linguagem, afinidade por tema? se não for especificar, eu retiraria o trecho "para garantir algum balanceamento entre eles".}
+Cabe esclarecer algumas peculiaridades da disciplina \rasura, que têm contribuído com o \radar. A disciplina tem a intenção de proporcionar um ambiente real de desenvolvimento de software baseado na metodologia da XP, assim, nela, os alunos interagem diretamente com comunidades de SL. Embora o professor possa interferir na formação dos grupos para garantir algum balanceamento técnico entre eles, a princípio os alunos escolhem os projetos com que querem trabalhar. Dessa forma, os grupos são formados com base no interesse pessoal de cada pessoa, estabelecendo em paralelo com o universo real de trabalho do SL.
 
 Vale ainda ressaltar que o trabalho em grupo no contexto da disciplina é importante, mas as contribuições individuais têm grande peso na nota final dos alunos. O conceito de meritocracia está normalmente presente nas comunidades de SL, inclusive no próprio \radar. Ao contribuir, os estudantes  começam atacando tarefas simples, tanto pelo fato de não conhecerem o projeto a fundo, tanto por não terem a confiança da comunidade para assumir demandas mais complexas.
-\todo{Existe algum caso em que algum aluno da disciplina continuou colaborando? Se sim, talvez valha pontuar isso.}
-
-
 
 \section{Métodos ágeis e a Programação Extrema}
 
 Os métodos ágeis nasceram como uma alternativa aos chamados métodos tradicionais de desenvolvimento de software. Nos chamados métodos tradicionais, há muita ênfase em processos, ferramentas, documentação, contratos e planejamento. Já os métodos ágeis procuram valorizar mais as interações entre indivíduos, software funcionando, colaboração com o cliente e a aceitação de mudanças~\cite{Beck2001Manifesto}.
 
-A Programação Extrema é uma metodologia ágil introduzida por Kent Beck, e possui como valores a comunicação, a coragem, o \emph{feedback}, o respeito e a simplicidade. Apresentaremos agora brevemente as práticas da XP descritas em \emph{Extreme Programming Explained}~\cite{Beck2004Xp}:
+A Programação Extrema é uma metodologia ágil introduzida por Kent Beck, e possui como valores a comunicação, a coragem, o \emph{feedback}, o respeito e a simplicidade. Apresentaremos agora brevemente as práticas da XP descritas no livro \emph{Extreme Programming Explained}~\cite{Beck2004Xp}:
 
 \begin{description}
 
 \item [Sentar-se junto:] a equipe deve trabalhar em um mesmo espaço de trabalho para promover a comunicação. Espaços abertos são preferíveis aos cubículos. A comunicação rápida e direta facilita a resolução de conflitos entre os desenvolvedores, o que muitas vezes surge de visões diferentes sobre possíveis soluções para um determinado problema do projeto.
-\todo{Isto é citação do livro? Ou a gente que está descrevendo?} 
 
 \item [Equipe integral:] a equipe deve incluir pessoas de forma a conter todas as habilidades necessárias para o sucesso do projeto. Exemplos de perfis possivelmente necessários: desenvolvedores, analistas de negócios, administradores de sistemas, testadores, etc. Todos devem estar comprometidos com o sucesso do projeto.
 
@@ -163,14 +153,12 @@ A Programação Extrema é uma metodologia ágil introduzida por Kent Beck, e possui
 Outros pesquisadores têm estudado a relação entre práticas ágeis e projetos de SL. Corbucci e Goldman aplicaram questionários nas comunidades de software livre e de métodos ágeis para descobrir que princípios e práticas eram compartilhados por ambas as comunidades~\cite{Hugo2010Worlds}. As duas comunidades apresentaram respostas razoavelmente similares sobre ferramentas preferidas, tais como \emph{issue tracker} ou alerta de \emph{build} quebrada, assim como sobre a eficiência de diferentes meios de comunicação, tais como canais de IRC ou troca de e-mails.
 
 During relata a experiência do projeto PyPy~\cite{During2006Pypy}, um projeto SL que adotou práticas ágeis desde seu início com bastante naturalidade. O artigo discute a dificuldade em se conciliar a mentalidade de software livre / projeto ágil com as necessidades burocráticas do patrocínio da União Europeia. Ou seja, para o autor a mentalidade de projetos SL converge sem problemas com a mentalidade ágil, enquanto que ambas apresentam problemas para se encaixar nos processos burocráticos de gerenciamento e documentação de um ``projeto europeu''.
-\todo{No Brasil tem menos burocracia ou é igual? Tem exemplos daqui?}
 
 Ahalt et al. apresentam um processo de desenvolvimento de software livre com a adoção de práticas ágeis no contexto de pesquisas científicas~\cite{Ahalt2014Water}. O grande foco do processo proposto está na maior colaboração entre pesquisadores e desenvolvedores de softwares científicos. Essa colaboração é proposta dentro de uma perspectiva ágil. Já o aspecto de software livre se apresenta como um meio para um maior reaproveitamento e compartilhamento de soluções em uma comunidade científica, o que leva inclusive ao desenvolvimento de software de melhor qualidade, contrastando com diferentes softwares com o mesmo propósito sendo desenvolvidos por pesquisadores isolados. Novamente, estes autores encaram projetos SL e práticas ágeis como aspectos convergentes.
 
 Tsirakidis et al. tentam encontrar fatores de sucesso e de falha em projetos ágeis executados em organizações desenvolvedoras de software livre~\cite{Tsirakidis2009SuccessFailures}. Baseando-se em entrevistas com membros de dois desses projetos ágeis e na análise de perfis de seus participantes, os autores concluem como fatores de sucesso: 1) comunicação síncrona e constante, em contraste com conversas espalhadas por diferentes listas de e-mails; 2) consistência na metodologia de desenvolvimento; 3) cultura de testes; e 4) aceitação e tratamento de limitações do ambiente. O mais importante desse artigo, em nosso contexto, é que ele apresenta uma evidência de que uma ``organização desenvolvedora de SL'' adota oficialmente práticas ágeis de desenvolvimento de software.
 
-Temos também Turnu et al. que apresentam um modelo para simular o processo de desenvolvimento de projetos de software livre~\cite{Turnu2004TddSimulating}. Eles utilizam o modelo para comparar a produção de SL utilizando TDD~\cite{Beck2002Tdd} \emph{versus} a produção do SL sem utilizar essa prática ágil. Eles concluem que a prática de TDD em projetos SL aumenta o tempo gasto para se escrever uma linha de código de produção, mas que porém reduz os defeitos no software.
-\todo{O que siginifica a sigla TDD? Cabe uma nota de rodapé explicando o que seja?} 
+Temos também Turnu et al. que apresentam um modelo para simular o processo de desenvolvimento de projetos de software livre~\cite{Turnu2004TddSimulating}. Eles utilizam o modelo para comparar a produção de SL utilizando Desenvolvimento Guiado por Testes (TDD)~\cite{Beck2002Tdd} \emph{versus} a produção do SL sem utilizar essa prática ágil. Eles concluem que a prática de TDD em projetos SL aumenta o tempo gasto para se escrever uma linha de código de produção, mas que porém reduz os defeitos no software.
 
 À exceção de Corbucci e Goldman, os demais estudos investigados indicam que a ideia de aplicar práticas ágeis em projetos SL aparece de maneira natural, desejável e sem empecilhos. Já Corbucci e Goldman começam questionando esse relacionamento, mas por meio de questionários concluem que as práticas adotadas nas comunidades não são tão diferentes. Vale ressaltar que esse questionário abordou apenas alguns aspectos do desenvolvimento, se focando em ferramentas e canais de comunicação. 
 
@@ -192,23 +180,17 @@ No contexto de contribuições feitas no \emph{modo disciplina}, a prática de sent
 
 \subsection{Equipe integral}
 
-Acreditamos que essa prática a princípio não se aplica aos projetos SL, uma vez que todos os contribuidores de um projeto SL formam a ``equipe''. Assim, a adesão a essa prática em um projeto SL é compulsória. Em organizações, a orientação para uma equipe integral faz sentido pois muitas vezes há uma equipe comprometida com o produto, mas algumas atividades são terceirizadas para outras equipes da organização, tais como atividades de testes ou implantação. Em projetos SL a princípio não há o conceito de ``outras pessoas da organização fora da equipe''.
-\todo{Se não se aplica ao SL, como é compulsória (obrigatória) a prática?} 
+Acreditamos que essa prática seja compulsória aos projetos SL, uma vez que todos os contribuidores de um projeto SL formam a ``equipe''. Normalmente não há alternativa ao seguimento da prática. Em organizações, a orientação para uma equipe integral faz sentido pois muitas vezes há uma equipe comprometida com o produto, mas algumas atividades são terceirizadas para outras equipes da organização, tais como atividades de testes ou implantação. Em projetos SL a princípio não há o conceito de ``outras pessoas da organização fora da equipe''.
 
 No entanto, uma interpretação mais específica pode ser feita para o \emph{modo disciplina}: o sucesso da equipe no contexto da disciplina não pode depender de membros do projeto que não estejam no grupo da disciplina. O mesmo vale para \emph{hackathons}: atingir um objetivo em um \emph{hackathon} não pode depender de contribuidores não presentes no \emph{hackathon}. Assim, no contexto de uma disciplina ou de um \emph{hackathon}, a equipe integral é uma prática importante a ser seguida em projetos SL.
-\todo{Ficou confusa a lógica: não se aplica a produção de SL (no 1º parágrafo) e termina dizendo que é importante... eu mesma não entendi se temos ou não uma equipe integral, se é bom ou não ter em SL e o pq.} 
 
 \subsection{Ambiente informativo}
 
 Em um projeto SL não faz sentido falar de um ambiente \emph{físico} informativo. Mas no \radar, temos algumas informações que poderiam formar um espaço \emph{virtual} informativo, tais como: estado da \emph{build} executada pela integração contínua, quantidade de visitas à aplicação no período, número de curtidas no Facebook  no período, quantidade de linhas de código entregues no período, quantidade de \emph{issues} fechadas no período, métricas de qualidade de código (atualmente em andamento). Algumas dessas informações já são coletadas pelo próprio sistema de repositório, no caso o Github. Na Figura \rasura, é mostrada, por exemplo, a quantidade de entregas de código em relação ao tempo.
-\todo{Se não se aplica ao SL, como é compulsória (obrigatória) a prática?} 
 
 No contexto do \radar, o problema é que todas essas informações estão dispersas em páginas diferentes. Mas se fossem integradas em um único espaço virtual, formariam um ambiente informativo equivalente à prática da XP, o que poderia trazer novos benefícios ao projeto. Assim acreditamos que essa prática da XP é aplicável e desejável a projetos SL.
-\todo{Como poderíamos fazer isso no Radar? Página do projeto poderia ser adaptada para ter essas infos e métricas ofertas e atualizadas automaticamente?} 
 
 \subsection{Trabalho energizado}
-
-% TODO
 
 No modo de desenvolvimento distribuído, cada colaborador age voluntariamente e, portanto, é autônomo para decidir em quê empenhará seu esforço ao longo do tempo. Um colaborador pode individualmente seguir a prática de trabalho energizado e trabalhar apenas quando se sentir produtivo, mas acreditamos que não faz sentido falar dessa prática como algo adotado corriqueiramente pelo projeto.
 
@@ -228,12 +210,11 @@ Nos modos \emph{hackathon} e \emph{disciplina}, o time elege funcionalidades a s
 
 Raymond é enfático ao longo de seu artigo sobre a importância do envolvimento dos usuários. ``Ouça seus clientes'', ``A melhor coisa depois de ter boas ideias é reconhecer boas ideias dos seus usuários'', ``Se você tratar seus \emph{beta testers} como seus recursos mais valiosos, eles irão responder tornando-se seus mais valioso recurso''~\cite{Raymond1999Bazaar}. Essas e outras passagens do texto deixam clara a importância central do envolvimento do usuário em um projeto SL.
 
-Isso tudo talvez seja uma lição sobre uma lacuna a ser trabalhada no \radar. Atualmente procuramos ouvir o \emph{feedback} de usuários nos eventos comunitários dos quais participamos. Uma importante funcionalidade do \radar, que é \rasura, surgiu de sugestões de diversos usuários que reportaram que tal funcionalidade era desejada. No entanto, esse contato com os usuários é muito esporádico. Considerando suas 449 curtidas no Facebook e suas mais de 100 visitas mensais, acreditamos que alguns usuários poderiam ser mobilizados para fornecer um melhor \emph{feedback} aos desenvolvedores do \radar.
+Isso tudo talvez seja uma lição sobre uma lacuna a ser trabalhada no \radar. Atualmente procuramos ouvir o \emph{feedback} de usuários nos eventos comunitários dos quais participamos. Uma importante funcionalidade do \radar, que é \rasura, surgiu de sugestões de diversos usuários que reportaram que tal funcionalidade era desejada. No entanto, esse contato com os usuários é muito esporádico. Considerando suas 451 curtidas no Facebook e suas mais de 100 visitas mensais, acreditamos que alguns usuários poderiam ser mobilizados para fornecer um melhor \emph{feedback} aos desenvolvedores do \radar.
 
 \subsection{Ciclo semanal}
 
-No \emph{modo distribuído} de desenvolvimento com contribuições voluntárias, tal prática não é imposta, já que nesse modo as contribuições normalmente ocorrem em intervalos maiores do que uma semana. Já no modo de \emph{hackathon}, o evento todo constitui um único ciclo, curto. Por fim, mesmo no \emph{modo disciplina}, uma semana é um período curto demais, já que a semana conta com apenas 8 horas de desenvolvimento.
-\todo{8h de dev total ou por pessoa? Se for por pessoa, explicitar pq daí o time teria 40h (5 pessoa x 8h), não?} 
+No \emph{modo distribuído} de desenvolvimento com contribuições voluntárias, tal prática não é imposta, já que nesse modo as contribuições normalmente ocorrem em intervalos maiores do que uma semana. Já no modo de \emph{hackathon}, o evento todo constitui um único ciclo, curto. Por fim, mesmo no \emph{modo disciplina}, uma semana é um período curto demais, já que o time trabalha por apenas 8 horas.
 
 Porém, cabe lembrar que a primeira edição da XP~\cite{Beck2000Xp1} apresentava a prática de \emph{fases pequenas}. Essa prática se relaciona com o princípio de ``libere cedo e frequentemente; e ouça seus clientes'', utilizada no desenvolvimento do \emph{kernel} do Linux~\cite{Raymond1999Bazaar}.  Ou seja, mais do que entregar semanalmente, o intuito é entregar o mais cedo possível para acelerar o ciclo de \emph{feedback}.
 
@@ -244,7 +225,6 @@ Embora o \radar não apresente ciclos semanais, suas funcionalidades costumam ser
 Reflexões de médio e longo prazo sobre o projeto são também sugeridas por Raymond: ``Frequentemente, as soluções mais impressionantes e inovadoras surgem ao se perceber que o seu conceito do problema estava errado''~\cite{Raymond1999Bazaar}. Ambos os métodos de Raymond e de Beck reconhecem que mais difícil do que construir é saber o que deve ser construído.
 
 No \radar não há ciclos ou momentos formais para essas reflexões. No entanto, o início da colaboração dos alunos das disciplinas a cada semestre gera um debate sobre as prioridades do projeto, principalmente sobre demandas que podem ser potencialmente atacadas pelos alunos. Com isso, o semestre acaba se tornando o intervalo de tempo entre esses momentos de maior reflexão sobre o projeto.
-\todo{Acabamos tento ciclos semestrais ordinários então? E nos hackathons tb temos desses momentos, mas sem freq definida, certo?} 
 
 \subsection{Folga}
 
@@ -265,7 +245,6 @@ Raymond apresenta a Lei de Linus como ``Dados olhos suficientes, todos os erros 
 No \radar, a cada entrega realizada no repositório, a bateria de testes automatizados é executada. Caso a \emph{build} falhe, um e-mail é enviado aos membros do projeto, dando visibilidade imediata do ocorrido. 
 
 Acreditamos que a existência de uma bateria de testes automatizados traga um valor a mais para projetos SL dependentes de voluntários, quando comparado a projetos de software em geral. Isso porque colaboradores dedicam seu pouco tempo livre ao desenvolvimento do projeto. A existência de uma bateria de testes dá confiança ao colaborador de que ele não está inserindo defeitos no projeto, dispensando-o do esforço de uma compreensão geral do sistema além do escopo de sua contribuição. Tal esforço seria um grande inibidor de colaborações.
-\todo{Nunca tinha me dado conta da importância tão fundamental dos testes automatizados! :-)} 
 
 Na integração contínua do \radar estamos tomando um passo além ao investir num fluxo de entrega contínua~\cite{Humble2010Delivery}, no qual a integração contínua dispara a implantação da nova versão da aplicação caso os testes tenham sucesso. Novamente, no contexto de projetos de SL dependentes de voluntários isso tem um valor a mais, uma vez que se diminui o esforço de gerenciamento manual da infraestrutura. Sem a implantação automatizada, toda contribuição de um colaborador só entrega valor ao usuário depois que outro colaborador com acesso à infra atualiza o sistema em produção. Com a implantação contínua, toda colaboração entrega valor imediatamente ao usuário. Essa rápida entrega também acelera o ciclo de \emph{feedback}, o que é importante, pois quanto mais cedo um voluntário tenha o \emph{feedback} de suas alterações, maiores são as chances de que ele esteja disposto a refinar sua solução. 
 
@@ -279,15 +258,14 @@ No modo \emph{hackathon}, a pressa em se gerar resultados tendo em vistas uma po
 
 O \emph{modo disciplina} é o mais favorável à aplicação de uma maior disciplina na entrega de código com testes automatizados. Nesse contexto, é possível colocar como objetivo da disciplina a prática de TDD. Com isso, é comum que o código entregue no modo disciplina possua testes de unidade. 
 
-Por fim, mesmo com as dificuldades apresentadas, vale ressaltar que na última medição, o \radar apresentou um índice de cobertura de testes de 64\%, o que consideramos um resultado satisfatório.]\todo{Como é feita essa medida? Mede-se o quê? O que significa cobertura?} 
+Por fim, mesmo com as dificuldades apresentadas, vale ressaltar que na última medição, o \radar apresentou um índice de cobertura de testes de 64\%\footnote{Ou seja, ao se executar os testes, 64\% das linhas de código são exercitadas, sem contar código de teste.}, o que consideramos um resultado satisfatório.
 
 
 \subsection{Design incremental}
 
 ``Os programadores bons sabem o que escrever. Os grandes sabem o que re-escrever'', ``Planeje jogar algo fora; você irá, de qualquer maneira''~\cite{Raymond1999Bazaar}. Essas características do modelo de desenvolvimento apresentado por Raymond convergem com a filosofia ágil de evitar um grande esforço antecipado de \emph{design}. Na XP, trechos do sistema são ``jogados fora'' continuamente com a prática de \emph{design incremental}, pois o código está sendo constantemente evoluído por meio de refatorações. 
 
-Em todos os modos de desenvolvimento do \radar, os desenvolvedores mais experientes do projeto procuram manter um \emph{design} limpo e elegante. Isso é ocasionalmente feito com refatorações sobre código entregue por outros colaboradores. Ou seja, um \emph{design} elaborado não é condição para que uma colaboração seja aceita, pois sabemos que o \emph{design} pode evoluir.
-\todo{O que é um design limpo e elegante? Não seria interessante colocar alguma referência disso?} 
+Em todos os modos de desenvolvimento do \radar, os desenvolvedores mais experientes do projeto procuram manter uma base de código limpo~\cite{Bob2008Clean}. Isso é ocasionalmente feito com refatorações sobre código entregue por outros colaboradores. Ou seja, um \emph{design} elaborado não é condição para que uma colaboração seja aceita, pois sabemos que o \emph{design} pode evoluir.
 
 No contexto do \radar, identificamos desafios para a manutenção de um \emph{design} limpo devido a código existente que não está gerando valor para o projeto. A existência desse tipo de código acontece por dois motivos: 1) a compreensão sobre as necessidades do projeto não estava clara na primeira tentativa de codificação de uma certa funcionalidade; ou 2) os desenvolvedores tentaram se antecipar construindo uma base para futuras funcionalidades que acabaram não sendo implementadas. Em ambos os casos, o código gerado deve ser mantido livre de defeitos, o que ocasionalmente exige esforço de outros desenvolvedores preocupados com outras funcionalidades. Nessas situações pode ser preciso esperar o momento adequado para ``jogar algo fora'', pois os colaboradores não devem ser desmotivados a continuarem a colaborar com o projeto. Acreditamos que esse tipo de problema possa ser comum em outros projetos SL.
 
@@ -315,8 +293,6 @@ O primeiro e maior viés que temos é discutir os relacionamentos entre SL e práti
 Outro viés é a presença do modo de desenvolvimento do \radar em disciplinas universitárias. Nesse contexto, os alunos já são orientados a seguir determinadas práticas ágeis, e cobrados por isso. Isso pode causar uma maior adesão a práticas ágeis no \radar do que talvez se encontre em projetos sem essa característica. Para tratar esse viés, procuramos realizar as análises de forma separada para cada modo de desenvolvimento encontrado no \radar, destacando assim as peculiaridades do modo disciplina. Além disso, as contribuições dos alunos no \emph{modo disciplina} não se distanciam tanto do \emph{modo distribuído} ao se considerar que os alunos estão livres para escolher quais funcionalidades implementar.
 
 Por fim, as práticas da XP foram adotadas como referência de práticas ágeis. Contudo, se nossa referência tivesse sido outra, como o \emph{scrum} ou o próprio manifesto ágil por exemplo, o resultado poderia ter sido bem diferente. No entanto, achamos razoável a escolha da XP por apresentar um grande conjunto de práticas diretamente relacionadas ao desenvolvimento de software, diferentemente do \emph{scrum} que é um arcabouço para o gerenciamento de projetos em geral.
-\todo{Achei que faltou alguma referência aqui no final sobre essa afirmação em relação ao scrum.} 
-
 
 \section{Conclusão}
 
