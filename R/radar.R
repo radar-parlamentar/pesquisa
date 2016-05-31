@@ -15,9 +15,10 @@
 # You should have received a copy of the GNU General Public License
 # along with Radar Parlamentar.  If not, see <http://www.gnu.org/licenses/>.
 
-#para instalar o pacote wnominate: 
+#install.packages("pscl")
+#install.packages("wnominate")
 #install.packages("ggplot2")
-require("wnominate")
+library("wnominate")
 # rm(list=ls())
 # options(max.print=1000)
 
@@ -289,21 +290,22 @@ ver.pc <- function(resultado,numero.pc) {
   barplot(alturas,sub=paste("Variancia Explicada =",round(pca$sdev[numero.pc]^2,2),"(",round(100*(pca$sdev[numero.pc]^2)/sum(pca$sdev^2),1),"%)"),space=0,border=NA,add=TRUE,xlab=NULL,names.arg=" ")
 }
 
-
-plot_radar_black_and_white <- function(radar_pca) {
-    plot(radar_pca$pca$x[,1], radar_pca$pca$x[,2])
+plot_radar <- function(radar_pca) {
+  x <- radar_pca$pca$x[,1]
+  y <- radar_pca$pca$x[,2]
+  partidos <- radar_pca$rcobject$legis.data
+  num.partidos <- length(levels(as.factor(partidos)))
+  cores <- paleta()[partidos]
+  symbols(x, y, circles=rep(1,length(x)), inches=0.03, fg=cores, bg=cores)
+  partidos.ordenados <- names(sort(table(partidos), decreasing=TRUE))
+  cores.partidos.ordenados <- paleta()[partidos.ordenados]
+  legend("topright", partidos.ordenados, col=cores.partidos.ordenados, pch=19) 
 }
 
-
-plot_radar <- function(radar_pca) {
-    xx <- radar_pca$pca$x[,1]
-    yy <- radar_pca$pca$x[,2]
-    partido <- factor(radar_pca$rcobject$legis.data)
-    num.partidos <- length(levels(partido))
-    paleta <- colorRampPalette(c("darkblue","blue","yellow","green","darkmagenta","cyan","red","black","aquamarine"),space = "Lab")(num.partidos)
-    cor <- paleta[as.integer(partido)]
-    symbols(xx,yy,circles=rep(1,length(xx)),inches=0.05,fg=cor,bg=cor)
-    legend("topright",levels(partido),col=paleta[1:22],pch=19) 
+paleta <- function () {
+  paleta <- c("#15c5ff", "#203487", "#203487", "#203487", "#203487", "#6c85b1", "#FF0000", "#1f1a17", "#FF5B00", "#c30909", "#173495", "#cd0600", "#f2ed31", "#25b84a", "#800205", "#110274", "#110274", "#fea801", "#002664", "#002664", "#ffff6b", "#312dc1", "#610100", "#65a4fb", "#D51500 ", "#0066ff", "#0066ff", "#ff8d00", "#00CC00", "#67a91e", "#0059AB", "#FFFF00", "#004607", "#80c341", "#da251c", "#2ba138", "#226d2a", "#312dc1", "#114d12", "#173495", "#d7bf1f", "#094196", "#15c5ff", "#f7931e", "#f95800", "#562a72", "#a1a838", "#1db10c")
+  names(paleta) <- as.factor(c("PRB", "PDS", "PPR", "PP", "PPB", "PDT", "PT", "PTB", "PMDB", "PSTU", "PSL", "PST", "PTN", "PSC", "PCB", "PR", "PL", "PPS", "DEM", "PFL", "PSDC", "PRTB", "PCO", "PHS", "PMN", "PRN", "PTC", "PSB", "PV", "PRP", "PSDB", "PSOL", "PPL", "PSD", "PCdoB", "PTdoB", "PRONA", "PTR", "PRS", "PDC", "PEN", "PAN", "PMR", "PROS", "SD", "ARENA", "MDB", "REDE"))
+  paleta  
 }
 
 # OBSERVAÇÕES:
