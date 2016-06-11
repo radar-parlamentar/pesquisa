@@ -52,6 +52,8 @@ cx <- sweep(votes_matrix, 2, colMeans(votes_matrix), "-") # centering
 sv <- svd(cx)
 plot(sv$u[, 1], sv$u[, 2], main = "SVD", xlab = "U1", ylab = "U2")
 length(sv$u[, 1]) # 67
+# Obs: esse trecho é como fazemos no Radar:
+# centralizamos por coluna e usamos a matriz U
 
 # Tentando agora transpor a matriz
 # pra analisarmos as proximidades entre as votações.
