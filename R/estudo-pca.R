@@ -14,6 +14,7 @@ plot(s$d[1]*s$v[,1], s$d[2]*s$v[,2])
 pca <- prcomp( t(votes_matrix) )
 plot(pca$x[,1], pca$x[,2])
 # Mas temos 131 pontos, o que corresponde às votações, e não aos vereadores.
+names(pca)
 
 # prcomp assumes: units/samples in row and features in columns.
 
@@ -31,3 +32,38 @@ length(x1)
 length(x2)
 x1[1:10]
 x2[1:10]
+
+
+# Tentando resolver o problema
+# Referência: http://genomicsclass.github.io/book/pages/pca_svd.html
+# First, the typical principal component analysis on the samples would be 
+# such that the samples are rows of the data matrix.
+# Em nosso caso, os parlamentares são as amostras.
+# This PCA is equivalent to performing the SVD on the centered data, 
+# where the centering occurs on the columns (votações)
+# So the columns of U from the SVD correspond to the principal components. 
+
+# pca típico: samples are rows (samples = parlamentares) 
+pca <- prcomp(votes_matrix)
+plot(pca$x[,1], pca$x[,2])
+length(pca$x[,1]) # 67
+
+cx <- sweep(votes_matrix, 2, colMeans(votes_matrix), "-") # centering
+sv <- svd(cx)
+plot(sv$u[, 1], sv$u[, 2], main = "SVD", xlab = "U1", ylab = "U2")
+length(sv$u[, 1]) # 67
+
+# Tentando agora transpor a matriz
+# pra analisarmos as proximidades entre as votações.
+
+pca <- prcomp(t(votes_matrix))
+plot(pca$x[,1], pca$x[,2])
+length(pca$x[,1]) # 131
+
+tx <- t(votes_matrix)
+cx <- sweep(tx, 2, colMeans(tx), "-") # centering
+sv <- svd(cx)
+plot(sv$u[, 1], sv$u[, 2], main = "SVD", xlab = "U1", ylab = "U2")
+length(sv$u[, 1]) # 131
+
+
