@@ -68,4 +68,29 @@ sv <- svd(cx)
 plot(sv$u[, 1], sv$u[, 2], main = "SVD", xlab = "U1", ylab = "U2")
 length(sv$u[, 1]) # 131
 
+# Dúvida: utilizamos agora a pouco as colunas de U pra obter 
+# as coordenadas PCAs dos vereadores.
+# Mas ao longo do texto (do livro de data anlysis for life sciences)
+# o utilizado era a multiplicação de D pelas colunas de V.
+# Será que são exatamente a mesma coisa? Vamos ver...
+
+cx <- sweep(votes_matrix, 2, colMeans(votes_matrix), "-") # centering
+sv <- svd(cx)
+plot(sv$u[, 1], sv$u[, 2], main = "SVD", xlab = "U1", ylab = "U2")
+length(sv$u[, 1]) # 67
+
+tx <- t(votes_matrix)
+tx <- sweep(tx, 2, colMeans(tx), "-") # centering
+svt <- svd(tx)
+pca1 <- svt$d[1]*svt$v[,1]
+pca2 <- svt$d[2]*svt$v[,2]
+plot(pca1, pca2)
+length(pcax) # 67
+
+# São diferentes!
+# Qual deveria ser o input de svd para conseguir 
+# d[1]*v[,1] igual ao u[,1] que obtivemos na outra situação (input cx)?
+
+
+
 
