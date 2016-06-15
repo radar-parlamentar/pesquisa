@@ -33,7 +33,8 @@ length(x2)
 x1[1:10]
 x2[1:10]
 
-
+###########################################
+  
 # Tentando resolver o problema
 # Referência: http://genomicsclass.github.io/book/pages/pca_svd.html
 # First, the typical principal component analysis on the samples would be 
@@ -68,6 +69,8 @@ sv <- svd(cx)
 plot(sv$u[, 1], sv$u[, 2], main = "SVD", xlab = "U1", ylab = "U2")
 length(sv$u[, 1]) # 131
 
+################################################
+
 # Dúvida: utilizamos agora a pouco as colunas de U pra obter 
 # as coordenadas PCAs dos vereadores.
 # Mas ao longo do texto (do livro de data anlysis for life sciences)
@@ -91,6 +94,15 @@ length(pcax) # 67
 # Qual deveria ser o input de svd para conseguir 
 # d[1]*v[,1] igual ao u[,1] que obtivemos na outra situação (input cx)?
 
+# outra tentativa
 
+tx <- t(votes_matrix)
+svt <- svd(tx - mean(tx))
+pca1 <- svt$d[1]*svt$v[,1]
+pca2 <- svt$d[2]*svt$v[,2]
+plot(pca1, pca2)
+length(pcax) # 67
+
+# também dá diferente
 
 
