@@ -20,12 +20,14 @@ cor <- paleta[as.integer(partido)]
 
 
 # gráfico com legenda e cores por partido:
+library(rafalib)
+mypar(1,1)
 symbols(xx,yy,circles=rep(1,length(xx)),inches=0.05,fg=cor)
 legend("topright",levels(partido),col=paleta[1:22],pch=19) 
 
 
 # gráfico em preto e branco sem legenda:
-plot(r$pca$x[,1],r$pca$x[,2]) # se tiver só essa linha
+#plot(r$pca$x[,1],r$pca$x[,2]) # se tiver só essa linha
 
  
 # por partido: (não está funcionando)

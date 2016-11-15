@@ -2,6 +2,9 @@
 # Um código mais minimalista para se gerar o gráfico PCA
 # com o objetivo de compará-lo ao gráfico gerado no Radar Parlamentar.
 
+library(rafalib)
+mypar(1,1)
+
 csv_file <- 'dados/votes-cmsp-2015.csv'
 data  <- read.csv(csv_file, sep=',', as.is=T)
 votes_matrix <- with(data, tapply(vote, list(voter_id, rollcall), c))

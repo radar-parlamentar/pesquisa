@@ -40,4 +40,3 @@ s <- summary(wn)
 
 
 
-
