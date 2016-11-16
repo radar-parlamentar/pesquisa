@@ -1,7 +1,7 @@
 
 library("wnominate")
 
-csv_file <- 'dados/votes-cmsp-2015.csv'
+csv_file <- 'dados/cmsp2015.csv'
 data  <- read.csv(csv_file, sep=',', as.is=T)
 
 #l <- list(data$voter_id, data$rollcall)
@@ -23,7 +23,7 @@ summary(rc_object)
 
 ?wnominate
 # que chato ter que falar esse polarity
-wn <- wnominate(rc_object, polarity=c(1,1))
+wn <- wnominate(rc_object, polarity=c(1,1), minvotes = 0, lop = 0)
 
 plot(wn)
 # wnominate gera pontos e linhas.

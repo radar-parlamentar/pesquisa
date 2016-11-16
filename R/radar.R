@@ -151,9 +151,9 @@ radarpca <- function(rcobject, minvotes = 20, lop = 0.025, scale = FALSE , cente
   total_yeas_vector <- total_yeas_vector[votings_to_use] 
   total_nays_vector <- total_nays_vector[votings_to_use]
   votosminoria <- pmin(total_yeas_vector, total_nays_vector) # quantidade de votos da minoria em cada votação usada
-  Nvotos <- dim(x)[2]
+  Nvotacoes <- dim(x)[2]
   resultado$votos.retidos <- votings_to_use
-  cat("\n\t\t...",dim(xoriginal)[2]-Nvotos, "de", dim(xoriginal)[2],
+  cat("\n\t\t...",dim(xoriginal)[2]-Nvotacoes, "de", dim(xoriginal)[2],
       "votos descartados.")
 
   # Vamos tirar parlamentares que votaram pouco.
@@ -203,7 +203,7 @@ radarpca <- function(rcobject, minvotes = 20, lop = 0.025, scale = FALSE , cente
   cat("\n\nRESUMO DA ANALISE RADAR-PCA")
   cat("\n---------------------------")
   cat("\nNumero de Parlmentares:  ",Nparlams," (",dim(xoriginal)[1]-Nparlams," excluidos)")
-  cat("\nNumero de Votos:         ",Nvotos," (",dim(xoriginal)[2]-Nvotos," votos excluidos)")
+  cat("\nNumero de Votações:         ",Nvotacoes," (",dim(xoriginal)[2]-Nvotacoes," votações excluidos)")
   cat("\nPrevisoes de SIM:        ",sim.acertado,"de", sim.verdadeiro.total, "(",round(100*sim.acertado/sim.verdadeiro.total,1),"%) previsoes corretas")
   cat("\nPrevisoes de NAO:        ",nao.acertado,"de", nao.verdadeiro.total, "(",round(100*nao.acertado/nao.verdadeiro.total,1),"%) previsoes corretas")
   cat("\nClassificacao Correta:   ","1D:",round(100*classif.correta1d,2),"% \t 2D:",round(100*classif.correta2d,2),"%")
