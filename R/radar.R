@@ -296,10 +296,12 @@ plot_radar <- function(radar_pca) {
   partidos <- radar_pca$rcobject$legis.data
   num.partidos <- length(levels(as.factor(partidos)))
   cores <- paleta()[partidos]
-  symbols(x, y, circles=rep(1,length(x)), inches=0.03, fg=cores, bg=cores)
+  title <- radar_pca$rcobject$desc
+  symbols(x, y, circles=rep(1,length(x)), inches=0.03, fg=cores, bg=cores, 
+          xlab="", ylab="", xaxt="n", yaxt="n", main=title)
   partidos.ordenados <- names(sort(table(partidos), decreasing=TRUE))
   cores.partidos.ordenados <- paleta()[partidos.ordenados]
-  legend("topright", partidos.ordenados, col=cores.partidos.ordenados, pch=19) 
+  #legend("topright", partidos.ordenados, col=cores.partidos.ordenados, pch=19) 
 }
 
 paleta <- function () {
