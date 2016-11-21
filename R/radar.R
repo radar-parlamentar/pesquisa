@@ -207,7 +207,9 @@ radarpca <- function(rcobject, minvotes = 20, lop = 0.025, scale = FALSE , cente
   cat("\nPrevisoes de SIM:        ",sim.acertado,"de", sim.verdadeiro.total, "(",round(100*sim.acertado/sim.verdadeiro.total,1),"%) previsoes corretas")
   cat("\nPrevisoes de NAO:        ",nao.acertado,"de", nao.verdadeiro.total, "(",round(100*nao.acertado/nao.verdadeiro.total,1),"%) previsoes corretas")
   cat("\nClassificacao Correta:   ","1D:",round(100*classif.correta1d,2),"% \t 2D:",round(100*classif.correta2d,2),"%")
-
+  cat("\nVariancia Explicada 1D:  ",with(resultado, round(pca$sdev[1]^2,2),"(",round(100*(pca$sdev[numero.pc]^2)/sum(pca$sdev^2),1),"%)"))
+  cat("\nVariancia Explicada 2D:  ",with(resultado, round(pca$sdev[2]^2,2),"(",round(100*(pca$sdev[numero.pc]^2)/sum(pca$sdev^2),1),"%)"))
+  
   # APRE
   so.erros.1d <- -acertos.erros.1d
   so.erros.1d[so.erros.1d==-1] <- 0
