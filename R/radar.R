@@ -308,21 +308,42 @@ plot_radar <- function(radar_pca) {
   y <- radar_pca$pca$x[,2]
   partidos <- radar_pca$rcobject$legis.data
   num.partidos <- length(levels(as.factor(partidos)))
-  cores <- paleta()[partidos]
+  cores <- paleta.cores()[partidos]
+  shapes <- paleta.shapes()[partidos]
   title <- radar_pca$rcobject$desc
-  symbols(x, y, circles=rep(1,length(x)), inches=0.03, fg=cores, bg=cores, 
-          xlab="", ylab="", xaxt="n", yaxt="n", main=title)
+  #symbols(x, y, circles=rep(1,length(x/2)), inches=0.03, fg=cores, bg=cores, 
+  #        xlab="", ylab="", xaxt="n", yaxt="n", main=title)
+  plot(x, y, xlab="", ylab="", xaxt="n", yaxt="n", main=title, 
+     pch=shapes, col=cores)  
   partidos.ordenados <- names(sort(table(partidos), decreasing=TRUE))
   cores.partidos.ordenados <- paleta()[partidos.ordenados]
   #legend("topright", partidos.ordenados, col=cores.partidos.ordenados, pch=19) 
 }
 
-paleta <- function () {
+paleta.cores <- function () {
+  paleta <- c("#000000", "#FF0000", "#FF5B00", "#0059AB", "#80c341", "#002664", "#002664", "#203487", "#110274", "#ff0066", "#6c85b1", "#1f1a17", "#f95800", "#25b84a", "#f7931e", "#da251c", "#ffff66", "#990099", "#00CC00", "#D51500", "#00ffff", "#990099", "#cc00cc", "#ffff66", "#999966", "#FFFF00", "#312dc1", "#ffff6b", "#0066ff", "#004607", "#cc00cc", "#1db10c")
+  names(paleta) <- as.factor(c("Sem partido", "PT", "PMDB", "PSDB", "PSD", "DEM", "PFL", "PP", "PR", "PSB", "PDT", "PTB", "SD", "PSC", "PROS", "PCdoB", "PPS", "PRB", "PV", "PMN", "PEN", "PTdoB", "PHS", "PRP", "PSL", "PSOL", "PRTB", "PSDC", "PTC", "PPL", "PAN", "REDE"))
+  paleta  
+}
+
+paleta.cores.completa <- function () {
   paleta <- c("#000000", "#15c5ff", "#203487", "#203487", "#203487", "#203487", "#6c85b1", "#FF0000", "#1f1a17", "#FF5B00", "#c30909", "#173495", "#cd0600", "#f2ed31", "#25b84a", "#800205", "#110274", "#110274", "#fea801", "#002664", "#002664", "#ffff6b", "#312dc1", "#610100", "#65a4fb", "#D51500", "#0066ff", "#0066ff", "#ff8d00", "#00CC00", "#67a91e", "#0059AB", "#FFFF00", "#004607", "#80c341", "#da251c", "#2ba138", "#226d2a", "#312dc1", "#114d12", "#173495", "#d7bf1f", "#094196", "#15c5ff", "#f7931e", "#f95800", "#562a72", "#a1a838", "#1db10c")
   names(paleta) <- as.factor(c("Sem partido", "PRB", "PDS", "PPR", "PP", "PPB", "PDT", "PT", "PTB", "PMDB", "PSTU", "PSL", "PST", "PTN", "PSC", "PCB", "PR", "PL", "PPS", "DEM", "PFL", "PSDC", "PRTB", "PCO", "PHS", "PMN", "PRN", "PTC", "PSB", "PV", "PRP", "PSDB", "PSOL", "PPL", "PSD", "PCdoB", "PTdoB", "PRONA", "PTR", "PRS", "PDC", "PEN", "PAN", "PMR", "PROS", "SD", "ARENA", "MDB", "REDE"))
   paleta  
 }
+  
+paleta.shapes <- function () {
+  paleta <- c(19, 19, 19,   19,   19,  19,  19,  15, 17, 18,  15,  15,  15, 15,  17,  15,    17,  19,  17, 17,  18,  17, 15,  18,  18,  19,   18,   15,   17,  17,  18,  18)
+  names(paleta) <- as.factor(c("Sem partido", "PT", "PMDB", "PSDB", "PSD", "DEM", "PFL", "PP", "PR", "PSB", "PDT", "PTB", "SD", "PSC", "PROS", "PCdoB", "PPS", "PRB", "PV", "PMN", "PEN", "PTdoB", "PHS", "PRP", "PSL", "PSOL", "PRTB", "PSDC", "PTC", "PPL", "PAN", "REDE"))
+  paleta  
+}
 
+paleta.shapes.completa <- function () {
+  partidos <- c("Sem partido", "PRB", "PDS", "PPR", "PP", "PPB", "PDT", "PT", "PTB", "PMDB", "PSTU", "PSL", "PST", "PTN", "PSC", "PCB", "PR", "PL", "PPS", "DEM", "PFL", "PSDC", "PRTB", "PCO", "PHS", "PMN", "PRN", "PTC", "PSB", "PV", "PRP", "PSDB", "PSOL", "PPL", "PSD", "PCdoB", "PTdoB", "PRONA", "PTR", "PRS", "PDC", "PEN", "PAN", "PMR", "PROS", "SD", "ARENA", "MDB", "REDE")
+  paleta <- seq(19, len(partidos)) 
+  names(paleta) <- as.factor(partidos)
+  paleta  
+}
 
 # OBSERVAÇÕES:
 
