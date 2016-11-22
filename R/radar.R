@@ -223,10 +223,16 @@ radarpca <- function(rcobject, minvotes = 20, lop = 0.025, scale = FALSE , cente
   # explicação da variância nas componentes principais
   var1d = with(resultado, pca$sdev[1]^2)
   var2d = with(resultado, pca$sdev[2]^2)
+  var3d = with(resultado, pca$sdev[3]^2)
+  var4d = with(resultado, pca$sdev[4]^2)
+  var5d = with(resultado, pca$sdev[5]^2)
   varTotal = with(resultado, sum(pca$sdev^2))
   cat("\nVariancia Explicada 1D:  ", round(var1d,2), "(", round(100*var1d/varTotal,0), "%)")
   cat("\nVariancia Explicada 2D:  ", round(var2d,2), "(", round(100*var2d/varTotal,0), "%)")
-          
+  cat("\nVariancia Explicada 3D:  ", round(var3d,2), "(", round(100*var3d/varTotal,0), "%)")
+  cat("\nVariancia Explicada 4D:  ", round(var4d,2), "(", round(100*var4d/varTotal,0), "%)")
+  cat("\nVariancia Explicada 5D:  ", round(var5d,2), "(", round(100*var5d/varTotal,0), "%)")
+  
   cat("\n\nRADAR PCA levou", (proc.time()-t.inicio)[3], "segundos para executar.\n\n")
   return(resultado)
 }
