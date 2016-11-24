@@ -2,8 +2,6 @@ source("radar.R")
 
 minvotes=0
 lop=-1
-minvotes=20
-lop=0.025
 # obs: wnominate usa por padrão minvotes=20 e lop=0.025
 
 analisar <- function(analise, title) {
