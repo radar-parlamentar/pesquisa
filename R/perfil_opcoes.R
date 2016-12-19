@@ -10,7 +10,7 @@ perfil_opcoes <- function(analise) {
   
   cdep_size <- 513
   qtd_votacoes <- length(unique(data$rollcall))
-  faltas <- length(data$vote) / (cdep_size * qtd_votacoes)
+  faltas <- 1 - length(data$vote) / (cdep_size * qtd_votacoes)
   cat('faltas =', round(faltas*100, 2), '%\n')
 }
 
