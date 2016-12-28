@@ -10,9 +10,12 @@ perfil_opcoes <- function(analise) {
   
   cdep_size <- 513
   qtd_votacoes <- length(unique(data$rollcall))
+  cat(qtd_votacoes, 'votações\n')
   faltas <- 1 - length(data$vote) / (cdep_size * qtd_votacoes)
   cat('faltas =', round(faltas*100, 2), '%\n')
 }
 
 perfil_opcoes('cdep2007-2010')
 perfil_opcoes('cdep2011-2014')
+perfil_opcoes('cmsp2013-2016')
+

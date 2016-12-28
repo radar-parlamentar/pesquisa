@@ -18,8 +18,4 @@ analisar('cdep2011-2014', 'Câmara dos Deputados 2011 - 2014')
 analisar('sen2007-2010', 'Senado 2007 - 2010')
 analisar('sen2011-2014', 'Senado 2011 - 2014') 
 analisar('cmsp2013-2016', 'Câmara Municipal de São Paulo 2013 - 2016') 
-# cmsp: atualizar dados ou verificar existência 2009-2012
-
-
-
 
