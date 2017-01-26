@@ -13,26 +13,16 @@ plot(x, y, xlim=c(0,11), ylim=c(-3,12), asp=1, main="Projeção dos dados sobre 
 model = lm(y ~ x)
 abline(model)
 text(15, 10.5, "CP1")
-intercept <- model$coefficients["(Intercept)"]
-slope <- model$coefficients["x"] 
-perp.slope <- -1/slope 
+cp1.intercept <- model$coefficients["(Intercept)"]
+cp1.slope <- model$coefficients["x"] 
+perp.slope <- -1/cp1.slope 
 
 # projeções sobre CP1
-x1 <- x[1]
-y1 <- y[1]
-intercept1 <- -perp.slope*x1 + y1
-abline(intercept1, perp.slope, lty=2)
-x2 <- x[10]
-y2 <- y[10]
-intercept2 <- -perp.slope*x2 + y2
-abline(intercept2, perp.slope, lty=2)
-
-# projection line
-sx0 <- (intercept1 - intercept) / (slope - perp.slope)
-sy0 <- intercept + slope*sx0
-sx1 <- (intercept2 - intercept) / (slope - perp.slope)
-sy1 <- intercept + slope*sx1
-segments(x0=sx0, y0=sy0, x1=sx1, y1=sy1, col="red", lwd=2)
+perp.intercept <- -perp.slope*x + y
+x1 <- (perp.intercept - cp1.intercept) / (cp1.slope - perp.slope)
+y1 <- cp1.intercept + cp1.slope*x1
+segments(x, y, x1, y1, lty=3)
+points(x1, y1, pch=3)
 
 
 
@@ -41,27 +31,17 @@ segments(x0=sx0, y0=sy0, x1=sx1, y1=sy1, col="red", lwd=2)
 
 plot(x, y, xlim=c(0,11), ylim=c(-3,12), asp=1, main="Projeção dos dados sobre outra reta r2 qualquer")
 
-# linha de baixa variância
-outro.intercept <- intercept - 3
-outro.slope <- perp.slope - 0.2
-abline(outro.intercept, outro.slope)
+# linha de baixa variância r2
+r2.intercept <- cp1.intercept - 3
+r2.slope <- perp.slope - 0.2
+abline(r2.intercept, r2.slope)
 text(-5, 6, "r2")
+perp.slope <- -1/r2.slope 
 
-# projeções sobre a linha de baixa variância
-x1 <- x[9]
-y1 <- y[9]
-slope1 = -1/outro.slope
-intercept1 <- -slope1*x1 + y1
-abline(intercept1, slope1, lty=2)
-x2 <- x[10]
-y2 <- y[10]
-intercept2 <- -slope1*x2 + y2
-abline(intercept2, slope1, lty=2)
-
-# projection line
-sx0 <- (intercept1 - outro.intercept) / (outro.slope - slope1)
-sy0 <- outro.intercept + outro.slope*sx0
-sx1 <- (intercept2 - outro.intercept) / (outro.slope - slope1)
-sy1 <- outro.intercept + outro.slope*sx1
-segments(x0=sx0, y0=sy0, x1=sx1, y1=sy1, col="red", lwd=2)
+# projeções sobre r2
+perp.intercept <- -perp.slope*x + y
+x1 <- (perp.intercept - r2.intercept) / (r2.slope - perp.slope)
+y1 <- r2.intercept + r2.slope*x1
+segments(x, y, x1, y1, lty=3)
+points(x1, y1, pch=3)
 
