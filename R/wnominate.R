@@ -27,6 +27,8 @@ analisar <- function(analise) {
   # que chato ter que falar esse polarity
   # valores default: minvotes = 20, lop = 0.025
   wn <- wnominate(rc_object, polarity=c(1,1))
+  # para variar lop e minvotes:
+  # wn <- wnominate(rc_object, polarity=c(1,1), lop=0, minvotes=0)
   
   plot(wn)
   # wnominate gera pontos e linhas.

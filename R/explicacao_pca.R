@@ -5,7 +5,7 @@ mypar(1,1)
 x = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 y = c(0.1, 4, 1, 5, 2, 8, 3, 7, 4, 11)
 
-# Gráfico 1
+# Gráfico 1 (Figura 4)
 
 plot(x, y, xlim=c(0,11), ylim=c(-3,12), asp=1, main="Projeção dos dados sobre a primeira componente principal")
 
@@ -27,7 +27,7 @@ points(x1, y1, pch=3)
 
 
 
-# Gráfico 2
+# Gráfico 2 (Figura 5)
 
 plot(x, y, xlim=c(0,11), ylim=c(-3,12), asp=1, main="Projeção dos dados sobre outra reta r2 qualquer")
 

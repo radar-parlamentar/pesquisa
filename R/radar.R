@@ -311,8 +311,8 @@ plot_radar <- function(radar_pca) {
   #        xlab="", ylab="", xaxt="n", yaxt="n", main=title)
   plot(x, y, xlab="", ylab="", xaxt="n", yaxt="n", main=title, 
      pch=shapes, col=cores)  
-  partidos.ordenados <- names(sort(table(partidos), decreasing=TRUE))
-  cores.partidos.ordenados <- paleta()[partidos.ordenados]
+  #partidos.ordenados <- names(sort(table(partidos), decreasing=TRUE))
+  #cores.partidos.ordenados <- paleta()[partidos.ordenados]
   #legend("topright", partidos.ordenados, col=cores.partidos.ordenados, pch=19) 
 }
 
