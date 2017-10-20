@@ -65,7 +65,11 @@ graficos-artigo.R (minvotes=0 e lop=-1) e wnominate.R (minvotes = 20 e lop = 0.0
 
 graficos-artigo.R (minvotes=0 e lop=-1)
 
-## Tabela 4 - Resultados variando lop e minvotes
+## Tabela 4 - Porcentagem da variância retida pelas dimensões do W-NOMINATE
+
+wnominate.R (minvotes = 20 e lop = 0.025)
+
+## Tabela 5 - Resultados variando lop e minvotes
 
 graficos-artigo.R (variando minvotes e lop) 
 

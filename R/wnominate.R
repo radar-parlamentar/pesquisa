@@ -43,6 +43,16 @@ analisar <- function(analise) {
   # APRE
   # GMP
 
+  paste('Número de dimensões estimadas:', wn$dimensions)
+  egvs <- wn$eigenvalues
+  egvs <- egvs[which(egvs > 0)]
+  variance <- trunc(egvs[1:5] / sum(egvs) * 100)
+  cat("\nVariancia Explicada 1D:  ", variance[1], "%")
+  cat("\nVariancia Explicada 2D:  ", variance[2], "%")
+  cat("\nVariancia Explicada 3D:  ", variance[3], "%")
+  cat("\nVariancia Explicada 4D:  ", variance[4], "%")
+  cat("\nVariancia Explicada 5D:  ", variance[5], "%")
+  cat('\nVariâncias explicadas 1D + 2D: ', sum(variance[1:2]), '%')
 }
 
 analisar('cdep2007-2010') 
